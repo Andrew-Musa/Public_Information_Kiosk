@@ -1,0 +1,31 @@
+.text-container {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.oval-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oval-row {
+    display: flex;
+}
+
+.oval {
+    width: 80px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #B82B35;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
