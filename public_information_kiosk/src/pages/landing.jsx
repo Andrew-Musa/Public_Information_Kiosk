@@ -2,6 +2,13 @@ import React from 'react'
 
 export default function Landing() {
     return (
-        <div>landing page</div>
+        <div>
+            
+              landing page
+            
+            
+            
+            
+            </div>
     )
 }
