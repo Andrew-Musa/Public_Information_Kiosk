@@ -3,18 +3,25 @@ import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom";
+} from 'react-router-dom';
 import Landing from './pages/landing';
 import Header from './components/header';
+import InsideNavigation from './pages/insideNavigation';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing />
   },
+  {
+    path: "/inside-navigation",
+    element: <InsideNavigation />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
