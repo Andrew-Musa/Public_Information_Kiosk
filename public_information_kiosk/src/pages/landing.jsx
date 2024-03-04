@@ -21,6 +21,10 @@ export default function Landing() {
         setSelectLanguageText(languages[languageIndex]);
     }, [languageIndex]);
 
+    const handleClick = () => {
+        window.location.href = "/InformationType";
+    }
+
     return (
         <div>
             <h2 style={{textAlign: 'center', marginTop: '70px'}}>Welcome to the City of Calgary!</h2>
@@ -31,16 +35,16 @@ export default function Landing() {
 
             <div className="oval-container">
             <div className="oval-row">
-                <div className="oval">English</div>
-                <div className="oval">普通话</div>
-                <div className="oval">Español</div>
-                <div className="oval">Français</div>
+                <div onClick={handleClick} className="oval">English</div>
+                <div onClick={handleClick} className="oval">普通话</div>
+                <div onClick={handleClick} className="oval">Español</div>
+                <div onClick={handleClick} className="oval">Français</div>
             </div>
             <div className="oval-row">
-                <div className="oval">العربية</div>
-                <div className="oval">اردو</div>
-                <div className="oval">日本語</div>
-                <div className="oval">ਪੰਜਾਬੀ</div>
+                <div onClick={handleClick} className="oval">العربية</div>
+                <div onClick={handleClick} className="oval">اردو</div>
+                <div onClick={handleClick} className="oval">日本語</div>
+                <div onClick={handleClick} className="oval">ਪੰਜਾਬੀ</div>
             </div>
             </div>
         </div>
