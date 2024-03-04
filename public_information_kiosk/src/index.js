@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import Landing from './pages/landing';
 import Screen3 from './pages/Screen3';
+import Screen5 from './pages/Screen5';
+import Screen7 from './pages/Screen7';
 import Header from './components/header';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/Screen3",
     element: <Screen3 />
+  },
+  {
+    path: "/Screen5",
+    element: <Screen5 />
+  },
+  {
+    path: "/Screen7",
+    element: <Screen7 />
   },
 ]);
 

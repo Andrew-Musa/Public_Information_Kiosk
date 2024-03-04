@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Screen3.css";
+import "./ServiceSelection.css";
 import Slider from '../components/slider';
 import SearchBar from '../components/searchBar';
 import baggageClaim from '../img/baggageClaim.jpeg';
@@ -22,7 +22,7 @@ export default function Screen3() {
     return (
         <div>
             
-        <h2 style={{textAlign: 'center', marginTop: '70px'}}>Select one of the bittons below, or search</h2>
+        <h2 style={{textAlign: 'center', marginTop: '70px'}}>Select one of the buttons below, or search</h2>
 
         <div className="search-bar-container">
             <SearchBar/>
