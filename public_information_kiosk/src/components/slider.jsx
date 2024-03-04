@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import "./slider.css"
 
 const Slider = ({ imageDataGroup1, imageDataGroup2 }) => {
     const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
@@ -15,14 +18,14 @@ const Slider = ({ imageDataGroup1, imageDataGroup2 }) => {
   
     return (
       <div className="slider">
-        <button onClick={handlePrevGroup}>Previous Group</button>
-        <button onClick={handleNextGroup}>Next Group</button>
+        <button className='img-slider-btn' style={{ left: 0 }} onClick={handlePrevGroup}><IoIosArrowBack /></button>
+        <button className='img-slider-btn' style={{ right: 0 }} onClick={handleNextGroup}><IoIosArrowForward /></button>
         {currentImageData.map((row, rowIndex) => (
           <div key={rowIndex} className="slider-row">
             {row.map((item, index) => (
               <div key={index} className="slider-item">
-                <img src={item.image} alt={item.alt} />
-                <p>{item.text}</p>
+                <img src={item.image} alt={item.alt} className="img-slider-img" />
+                <p className='img-slider-text'>{item.text}</p>
               </div>
             ))}
           </div>
