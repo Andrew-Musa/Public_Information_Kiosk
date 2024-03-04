@@ -5,6 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Landing from './pages/landing';
+import InformationType from './pages/informationType';
+import AirportInformation from './pages/airportInformation';
 import Header from './components/header';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
     path: "/",
     element: <Landing />
   },
+  {
+    path: "/InformationType",
+    element: <InformationType />
+  },
+  {
+    path: "/AirportInformation",
+    element: <AirportInformation />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
