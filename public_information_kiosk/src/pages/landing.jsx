@@ -47,6 +47,11 @@ export default function Landing() {
                     <div onClick={handleClick} className="oval">ਪੰਜਾਬੀ</div>
                 </div>
             </div>
+
+            <div style={{ textAlign: 'center', marginTop: '70px' }}>
+                <button className="accessModeButton"></button>
+            </div>
+            
         </div>
     );
 }

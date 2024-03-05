@@ -27,7 +27,7 @@
     align-items: center;
     margin: 10px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .backButton {
@@ -97,6 +97,10 @@
   }
 
 .infoButton {
+    background-image: url('../img/yyc_airport.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: white;
     border: 2px solid #B82B35;
     color: #B82B35;
@@ -105,11 +109,30 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    height: 150px;
+    height: 200px;
     width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .infoButton:hover {
     background-color: #B82B35;
     color: white;
+}
+
+.accessModeButton {
+    background-image: url('../img/disabled_mode.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border: 2px solid #B82B35;
+    color: #B82B35;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    height: 120px;
+    width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

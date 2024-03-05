@@ -18,11 +18,20 @@ export default function AirportInformation() {
         { image: parking, alt: 'Image 1_3', text: 'Parking' }, { image: lounges, alt: 'Image 1_4', text: 'Lounges' }]
     ];
 
+    const handleClick = () => {
+        window.location.href = "/information-type";
+    }
+
     const imageDataGroup2 = []
     return (
         <div>
 
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Select one of the buttons below, or search</h2>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
+                <button onClick={handleClick} className="backButton">{'< Back'}</button>
+                <button className="volunteerButton">Call a Volunteer</button>
+            </div>
 
             <div className="search-bar-container">
                 <SearchBar />
