@@ -7,6 +7,7 @@ import {
 import Landing from './pages/landing';
 import InformationType from './pages/informationType';
 import AirportInformation from './pages/airportInformation';
+import AccessibilityInformation from './pages/accessibilityInformation';
 import Header from './components/header';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/AirportInformation",
     element: <AirportInformation />
+  },
+  {
+    path: "/AccessibilityInformation",
+    element: <AccessibilityInformation />
   }
 ]);
 
