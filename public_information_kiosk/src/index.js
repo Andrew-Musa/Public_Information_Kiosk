@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom";
+} from 'react-router-dom';
 import Landing from './pages/landing';
 import Screen3 from './pages/Screen3';
 import Screen5 from './pages/Screen5';
 import Screen7 from './pages/Screen7';
 import Header from './components/header';
+import InsideNavigation from './pages/insideNavigation';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,10 @@ const router = createBrowserRouter([
     path: "/Screen7",
     element: <Screen7 />
   },
+  {
+    path: "/inside-navigation",
+    element: <InsideNavigation />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
