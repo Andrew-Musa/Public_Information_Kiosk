@@ -8,6 +8,8 @@ import Landing from './pages/landing';
 import Screen3 from './pages/Screen3';
 import Screen5 from './pages/Screen5';
 import Screen7 from './pages/Screen7';
+import InformationType from './pages/informationType';
+import AirportInformation from './pages/airportInformation';
 import Header from './components/header';
 import InsideNavigation from './pages/insideNavigation';
 import reportWebVitals from './reportWebVitals';
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
   {
     path: "/Screen7",
     element: <Screen7 />
+  },
+  {
+    path: "/InformationType",
+    element: <InformationType />
+  },
+  {
+    path: "/AirportInformation",
+    element: <AirportInformation />
   },
   {
     path: "/inside-navigation",
