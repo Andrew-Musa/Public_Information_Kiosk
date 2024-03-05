@@ -12,6 +12,8 @@ import InformationType from './pages/informationType';
 import AirportInformation from './pages/airportInformation';
 import Header from './components/header';
 import InsideNavigation from './pages/insideNavigation';
+import OutsideNavigation from './pages/outsideNavigation';
+import Restaurants from './pages/restaurants';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './App.css'
@@ -22,6 +24,18 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing />
+  },
+  {
+    path: "/inside-navigation",
+    element: <InsideNavigation />
+  },
+  {
+    path: "/restaurants",
+    element: <Restaurants />
+  },
+  {
+    path: "/outside-navigation",
+    element: <OutsideNavigation />
   },
   {
     path: "/Screen3",
