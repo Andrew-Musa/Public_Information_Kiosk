@@ -5,15 +5,15 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import Landing from './pages/landing';
-import Screen3 from './pages/Screen3';
-import Screen5 from './pages/Screen5';
-import Screen7 from './pages/Screen7';
-import InformationType from './pages/informationType';
 import AirportInformation from './pages/airportInformation';
+import PublicInformation from './pages/publicInformation';
+import RestaurantsInformation from './pages/restaurantsInformation';
+import InformationType from './pages/informationType';
 import Header from './components/header';
 import InsideNavigation from './pages/insideNavigation';
 import OutsideNavigation from './pages/outsideNavigation';
 import Restaurants from './pages/restaurants';
+import AccessibilityInformation from './pages/accessibilityInformation';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './App.css'
@@ -38,28 +38,28 @@ const router = createBrowserRouter([
     element: <OutsideNavigation />
   },
   {
-    path: "/Screen3",
-    element: <Screen3 />
-  },
-  {
-    path: "/Screen5",
-    element: <Screen5 />
-  },
-  {
-    path: "/Screen7",
-    element: <Screen7 />
-  },
-  {
-    path: "/InformationType",
-    element: <InformationType />
-  },
-  {
-    path: "/AirportInformation",
+    path: "/airport-information",
     element: <AirportInformation />
+  },
+  {
+    path: "/public-information",
+    element: <PublicInformation />
+  },
+  {
+    path: "/restaurants-information",
+    element: <RestaurantsInformation />
+  },
+  {
+    path: "/information-type",
+    element: <InformationType />
   },
   {
     path: "/inside-navigation",
     element: <InsideNavigation />
+  },
+  {
+    path: "/accessibility-information",
+    element: <AccessibilityInformation />
   }
 ]);
 

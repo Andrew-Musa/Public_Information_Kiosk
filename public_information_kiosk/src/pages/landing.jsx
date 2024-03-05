@@ -22,7 +22,7 @@ export default function Landing() {
     }, [languageIndex]);
 
     const handleClick = () => {
-        window.location.href = "/InformationType";
+        window.location.href = "/information-type";
     }
 
     return (

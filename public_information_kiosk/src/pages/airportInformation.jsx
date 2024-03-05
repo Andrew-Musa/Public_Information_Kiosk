@@ -1,59 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import './styles.css';
+import React from 'react';
+import "./ServiceSelection.css";
+import Slider from '../components/slider';
+import SearchBar from '../components/searchBar';
+import baggageClaim from '../img/baggageClaim.jpeg';
+import currencyExchange from '../img/currencyExchange.png';
+import flightInformation from '../img/flightInformation.png';
+import airportDirections from '../img/airportDirections.png';
+import airportHotels from '../img/airportHotel.png';
+import groundTransportations from '../img/groundTransportations.png';
+import parking from '../img/Parking.jpeg';
+import lounges from '../img/Lounges.png';
 
 export default function AirportInformation() {
-    const [searchTerm, setSearchTerm] = useState('');
+    const imageDataGroup1 = [
+        [{ image: baggageClaim, alt: 'Image 1_1', text: 'Baggage Claim' }, { image: currencyExchange, alt: 'Image 1_2', text: 'Currency Exchange' }, { image: flightInformation, alt: 'Ima', text: 'Flight Information' }, { image: airportDirections, alt: 'Image 1_4', text: 'Airport Directions' }],
+        [{ image: airportHotels, alt: 'Image 1_5', text: 'Airport Hotels' }, { image: groundTransportations, alt: 'Image 1_6', text: 'Ground Transports' },
+        { image: parking, alt: 'Image 1_3', text: 'Parking' }, { image: lounges, alt: 'Image 1_4', text: 'Lounges' }]
+    ];
 
-    const handleChange = (event) => {
-        setSearchTerm(event.target.value);
-    };
-    
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Handle search logic here, e.g., filtering data based on the search term
-        console.log('Search term:', searchTerm);
-    };
-
-    const handleClick = () => {
-        window.location.href = "/informationType";
-    }
-
+    const imageDataGroup2 = []
     return (
         <div>
-            <h3 style={{textAlign: 'center', marginTop: '70px', marginBottom: '0'}}>Select the Type of Information</h3>
-            <h3 style={{textAlign: 'center', marginTop: '0'}}>You're Looking For</h3>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <button onClick={handleClick} className="backButton">{'< Back'}</button>
-                <button className="volunteerButton">Call a Volunteer</button>
+            <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Select one of the buttons below, or search</h2>
+
+            <div className="search-bar-container">
+                <SearchBar />
             </div>
 
-            <form onSubmit={handleSubmit} style={{textAlign: 'center', marginTop: '20px'}}>
-            <input
-                type="text"
-                value={searchTerm}
-                onChange={handleChange}
-                placeholder="Search..."
-                style={{width: '300px', height: '20px', borderRadius: '5px'}}
-            />
-            {/* <button type="submit">Search</button> */}
-            </form>
 
-            <div className="paginationContainer">
-                <button className="paginationButton">&#60;</button>
-                <div className="squaresContainer">
-                <div className="square">Baggage Claim</div>
-                <div className="square">Currency Exchange</div>
-                <div className="square">Flight Information</div>
-                <div className="square">Parking</div>
-                <div className="description">Airport Directions</div>
-                <div className="description">Airport Hotels</div>
-                <div className="description">Lounges</div>
-                <div className="description">Ground Transportation</div>
-                </div>
-                <button className="paginationButton">&#62;</button>
-            </div>
+            <div className="slider-container"></div>
+            <Slider imageDataGroup1={imageDataGroup1} imageDataGroup2={imageDataGroup2} destination={"/inside-navigation"} />
+
+
+
+
         </div>
-    );
+    )
 }
-
