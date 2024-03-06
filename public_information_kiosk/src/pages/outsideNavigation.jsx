@@ -46,41 +46,39 @@ export default function OutsideNavigation() {
                 </>
             )}
 
-            <div className="row px-5 mt-5">
-                <div className='col-3 p-0'>
-                    <div className='border' style={{ height: "70px" }}>pic</div>
-                    <div className='border' style={{ fontSize: "6px", paddingTop: "5px", height: "130px" }}>
-                        <div>Calgary Tower</div>
-                        <div>Phone: (888)888-8888</div>
-                        <div>Open: 8:00-20:00</div>
-                        <div>All Days</div>
-                        <div>Street, City, Province</div>
-                        <div>Postal Code</div>
-                        <Star style={{ fontSize: "8px" }} />
-                        <Star style={{ fontSize: "8px" }} />
-                        <Star style={{ fontSize: "8px" }} />
-                        <Star style={{ fontSize: "8px" }} />
-                        <StarBorder style={{ fontSize: "8px" }} />
-                    </div>
+            {/* <div>
+                <button className='mapButtons'>
+                    <ZoomIn />
+                </button>
+                <button className='mapButtons'>
+                    <ZoomOut />
+                </button>
+                <button className='mapButtons'>
+                    <Explore />
+                </button>
+                <button className='mapButtons'>
+                    <RotateLeft />
+                </button>
+            </div> */}
+
+            <div className='mapContainer2'>
+                <div className='destinationInfo'>
+                    <img className='destinationImg' />
+                    <h1 style={{fontSize: '10px', marginLeft: '10px', marginBottom: '0', marginTop: '5px'}}>Restaurant Name</h1>
+                    <Star style={{fontSize: '10px', marginTop: '0px', marginLeft: '25px'}}/>
+                    <Star style={{fontSize: '10px', marginTop: '0px'}}/>
+                    <Star style={{fontSize: '10px', marginTop: '0px'}}/>
+                    <Star style={{fontSize: '10px', marginTop: '0px'}}/>
+                    <Star style={{fontSize: '10px', marginTop: '0px'}}/>
+                    <p style={{fontSize: '8px', textAlign: 'left', marginLeft: '5px'}}>Description of how yummy, tasty, and delicious, the food is.</p>
                 </div>
-                <div className="col-8 p-0">
-                    <div style={{ height: "200px" }} className='border d-flex'>Map</div>
-                </div>
-                <div className="col-1 d-flex flex-column">
-                    <button className='mapButtons'>
-                        <ZoomIn />
-                    </button>
-                    <button className='mapButtons'>
-                        <ZoomOut />
-                    </button>
-                    <button className='mapButtons'>
-                        <Explore />
-                    </button>
-                    <button className='mapButtons'>
-                        <RotateLeft />
-                    </button>
-                </div>
+                <img className='outsideMap' />
+                <ZoomIn style={{color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '345px', cursor: 'pointer', border: '1px solid black'}}/>
+                <ZoomOut style={{color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '315px', cursor: 'pointer', border: '1px solid black'}}/>
+                <Explore style={{color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '285px', cursor: 'pointer', border: '1px solid black'}}/>
+                <RotateLeft style={{color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '255px', cursor: 'pointer', border: '1px solid black'}}/>
             </div>
+
             <div className='d-flex justify-content-center pt-5'>
                 <button onClick={handleDirections} className='directionsButton'>Send Directions to My Phone</button>
             </div>
