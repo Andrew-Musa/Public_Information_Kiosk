@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import "./slider.css"
+import { Link } from 'react-router-dom';
 
 const Slider = ({ imageDataGroup1, imageDataGroup2 }) => {
   const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
@@ -23,10 +24,10 @@ const Slider = ({ imageDataGroup1, imageDataGroup2 }) => {
       {currentImageData.map((row, rowIndex) => (
         <div key={rowIndex} className="slider-row">
           {row.map((item, index) => (
-            <div key={index} className="slider-item" onClick={() => { window.location.href = item.href }}>
+            <Link key={index} className="slider-item" to={item.href} >
               <img src={item.image} alt={item.alt} className="img-slider-img" />
               <p className='img-slider-text'>{item.text}</p>
-            </div>
+            </Link>
           ))}
         </div>
       ))}
