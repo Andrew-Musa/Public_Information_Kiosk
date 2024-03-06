@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./ServiceSelection.css";
 import Slider from '../components/slider';
 import SearchBar from '../components/searchBar';
@@ -23,15 +23,35 @@ export default function AirportInformation() {
     }
 
     const imageDataGroup2 = []
+
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleClickVolunteer = () => {
+        setShowPopup(true);
+    };
+
+    const handleClosePopup = () => {
+        setShowPopup(false);
+    };
+
     return (
         <div>
 
-            <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Select one of the buttons below, or search</h2>
+            <h2 style={{ textAlign: 'center', marginTop: '70px' }}>What are you Looking For?</h2>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
                 <button onClick={handleClick} className="backButton">{'< Back'}</button>
-                <button className="volunteerButton">Call a Volunteer</button>
+                <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
+            {showPopup && (
+                <>
+                    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>
+                    <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '20px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', zIndex: '9999' }}>
+                        <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup}>X</button>
+                        <p style={{marginTop: '15px'}}>A white-hat volunteer is on their way to give assistance.</p>
+                    </div>
+                </>
+            )}
 
             <div className="search-bar-container">
                 <SearchBar />

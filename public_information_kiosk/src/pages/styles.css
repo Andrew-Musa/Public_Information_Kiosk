@@ -1,3 +1,7 @@
+body {
+    background-image: url('../img/background_img.png');
+}
+
 .text-container {
     height: 40px;
     display: flex;
@@ -135,4 +139,27 @@
     height: 120px;
     width: 120px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.infoButton2 {
+    background-image: url('../img/yyc_head.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border: 2px solid #B82B35;
+    color: #B82B35;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    height: 200px;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.infoButton2:hover {
+    background-color: #B82B35;
+    color: white;
 }

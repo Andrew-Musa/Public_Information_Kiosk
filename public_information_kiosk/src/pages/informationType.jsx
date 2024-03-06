@@ -64,12 +64,12 @@ export default function InformationType() {
 
             <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div><h1 style={{fontSize: '12px', marginTop: '15px'}}>Airport Information</h1></div>
+                    <div><h1 style={{fontSize: '12px', marginTop: '15px', fontWeight: 'bold'}}>Airport Information</h1></div>
                     <button onClick={handleAirportInfoClick} className="infoButton"></button>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <div><h1 style={{fontSize: '12px', marginTop: '15px'}}>Calgary Information</h1></div>
-                    <button onClick={handleCalgaryInfoClick} className="infoButton"></button>
+                    <div><h1 style={{fontSize: '12px', marginTop: '15px', fontWeight: 'bold'}}>Calgary Information</h1></div>
+                    <button onClick={handleCalgaryInfoClick} className="infoButton2"></button>
                 </div>
             </div>
 
