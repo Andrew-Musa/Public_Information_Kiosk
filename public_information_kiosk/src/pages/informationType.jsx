@@ -30,9 +30,8 @@ export default function InformationType() {
 
     return (
         <div>
-            {accessibleMode && <div style={{ height: "78px" }}></div>}
-            <h3 style={{ textAlign: 'center', marginTop: '70px', marginBottom: '0' }}>Select the Type of Information</h3>
-            <h3 style={{ textAlign: 'center', marginTop: '0' }}>You're Looking For</h3>
+            {accessibleMode && <div style={{ height: "101px" }}></div>}
+            <h3 style={{ textAlign: 'center', marginTop: '70px', marginBottom: '0' }}>Select Type of Information</h3>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
                 <Link to="/" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
