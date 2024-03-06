@@ -25,9 +25,13 @@ export default function Landing() {
         window.location.href = "/information-type";
     }
 
+    const accessibilityToggle = () => {
+        window.location.href = "/accessLanding";
+    }
+
     return (
         <div>
-            <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Welcome to the City of Calgary!</h2>
+            <h2 className="bounce-wave" style={{ textAlign: 'center', marginTop: '70px' }}>Welcome to the City of Calgary!</h2>
 
             <div className="text-container">
                 <h3>{selectLanguageText}</h3>
@@ -47,6 +51,11 @@ export default function Landing() {
                     <div onClick={handleClick} className="oval">ਪੰਜਾਬੀ</div>
                 </div>
             </div>
+
+            <div style={{ textAlign: 'center', marginTop: '70px' }}>
+                <button onClick={accessibilityToggle} className="accessModeButton"></button>
+            </div>
+            
         </div>
     );
 }
