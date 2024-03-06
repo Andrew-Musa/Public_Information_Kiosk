@@ -1,3 +1,7 @@
+body {
+    background-image: url('../img/background_img.png');
+}
+
 .text-container {
     height: 40px;
     display: flex;
@@ -20,20 +24,27 @@
     width: 80px;
     height: 40px;
     border-radius: 50%;
-    background-color: #B82B35;
-    color: white;
+    background-color: #EDEDED;
+    border: 2px solid #B82B35;
+    color: #B82B35;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(61, 38, 38, 0.2);
+}
+
+.oval:hover {
+    background-color: #B82B35;
+    border: 2px solid #EDEDED;
+    color: #EDEDED;
 }
 
 .backButton {
-    background-color: #B82B35;
-    color: white;
-    border: 1px solid #ccc;
+    background-color: #EDEDED;
+    border: 2px solid #B82B35;
+    color: #B82B35;
     padding: 5px 10px;
     font-size: 11px;
     cursor: pointer;
@@ -41,15 +52,27 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.volunteerButton {
+.backButton:hover {
     background-color: #B82B35;
-    color: white;
-    border: 1px solid #ccc;
+    border: 2px solid #EDEDED;
+    color: #EDEDED;
+}
+
+.volunteerButton {
+    background-color: #EDEDED;
+    border: 2px solid #B82B35;
+    color: #B82B35;
     padding: 5px 10px;
     font-size: 11px;
     cursor: pointer;
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.volunteerButton:hover {
+    background-color: #B82B35;
+    border: 2px solid #EDEDED;
+    color: #EDEDED;
 }
 
 .paginationContainer {
@@ -97,6 +120,10 @@
   }
 
 .infoButton {
+    background-image: url('../img/yyc_airport.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: white;
     border: 2px solid #B82B35;
     color: #B82B35;
@@ -105,11 +132,101 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    height: 150px;
+    height: 200px;
     width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .infoButton:hover {
     background-color: #B82B35;
     color: white;
 }
+
+.accessModeButton {
+    background-image: url('../img/disabled_mode.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border: 2px solid #B82B35;
+    color: #B82B35;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    height: 120px;
+    width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.infoButton2 {
+    background-image: url('../img/yyc_head.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border: 2px solid #B82B35;
+    color: #B82B35;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    height: 200px;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.infoButton2:hover {
+    background-color: #B82B35;
+    color: white;
+}
+
+.directionsButton {
+    background-color: #EDEDED;
+    border: 2px solid #B82B35;
+    color: #B82B35;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.directionsButton:hover {
+    background-color: #B82B35;
+    border: 2px solid #EDEDED;
+    color: #EDEDED;
+}
+
+.mapButtons {
+    color: #B82B35;
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+}
+
+.qrImg {
+    background-image: url('../img/qr_code.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+}
+
+.bounce-wave {
+    animation: bounceWave 3s infinite;
+  }
+  
+  @keyframes bounceWave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
