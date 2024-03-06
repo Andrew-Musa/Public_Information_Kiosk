@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Map, Marker } from "pigeon-maps"
 import { ZoomIn, ZoomOut, RotateLeft, Explore, SupportAgent, ArrowBack, Star, StarBorder } from '@mui/icons-material';
-
+import './styles.css';
 
 export default function OutsideNavigation() {
 
@@ -57,22 +57,22 @@ export default function OutsideNavigation() {
                     <div style={{ height: "200px" }} className='border d-flex'>Map</div>
                 </div>
                 <div className="col-1 d-flex flex-column">
-                    <button className='btn p-1'>
+                    <button className='mapButtons'>
                         <ZoomIn />
                     </button>
-                    <button className='btn mt-1 p-1'>
+                    <button className='mapButtons'>
                         <ZoomOut />
                     </button>
-                    <button className='btn mt-1 p-1'>
+                    <button className='mapButtons'>
                         <Explore />
                     </button>
-                    <button className='btn mt-1 p-1'>
+                    <button className='mapButtons'>
                         <RotateLeft />
                     </button>
                 </div>
             </div>
             <div className='d-flex justify-content-center pt-5'>
-                <button className='btn btn-outline-dark'>Send Directions to My Phone</button>
+                <button className='directionsButton'>Send Directions to My Phone</button>
             </div>
         </div >
     )
