@@ -13,9 +13,18 @@ import museum from '../img/museum.png';
 
 export default function PublicInformation() {
     const imageDataGroup1 = [
-        [{ image: Attractions, alt: 'Image 1_1', text: 'Attractions' }, { image: Restaurant, alt: 'Image 1_2', text: 'Restaurants' }, { image: Entertainments, alt: 'Ima', text: 'Flight Information' }, { image: Accommodations, alt: 'Image 1_4', text: 'Housing' }],
-        [{ image: Transportations, alt: 'Image 1_5', text: 'Transit' }, { image: shopping, alt: 'Image 1_6', text: 'Shopping' },
-        { image: cuisines, alt: 'Image 1_3', text: 'Cuisines' }, { image: museum, alt: 'Image 1_4', text: 'Museum' }]
+        [
+            { image: Attractions, alt: 'Image 1_1', text: 'Attractions', href: "./inside-navigation" },
+            { image: Restaurant, alt: 'Image 1_2', text: 'Restaurants', href: "./restaurants" },
+            { image: Entertainments, alt: 'Ima', text: 'Flight Information', href: "./inside-navigation" },
+            { image: Accommodations, alt: 'Image 1_4', text: 'Housing', href: "./inside-navigation" }
+        ],
+        [
+            { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "./inside-navigation" },
+            { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "./inside-navigation" },
+            { image: cuisines, alt: 'Image 1_3', text: 'Cuisines', href: "./inside-navigation" },
+            { image: museum, alt: 'Image 1_4', text: 'Museum', href: "./inside-navigation" }
+        ]
     ];
 
     const handleClick = () => {
@@ -48,7 +57,7 @@ export default function PublicInformation() {
                     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>
                     <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '20px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', zIndex: '9999' }}>
                         <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup}>X</button>
-                        <p style={{marginTop: '15px'}}>A white-hat volunteer is on their way to give assistance.</p>
+                        <p style={{ marginTop: '15px' }}>A white-hat volunteer is on their way to give assistance.</p>
                     </div>
                 </>
             )}
@@ -59,7 +68,7 @@ export default function PublicInformation() {
 
 
             <div className="slider-container"></div>
-            <Slider imageDataGroup1={imageDataGroup1} imageDataGroup2={imageDataGroup2} destination={"/outside-navigation"} />
+            <Slider imageDataGroup1={imageDataGroup1} imageDataGroup2={imageDataGroup2} />
 
 
 
