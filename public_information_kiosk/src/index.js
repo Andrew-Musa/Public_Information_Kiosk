@@ -14,6 +14,7 @@ import InsideNavigation from './pages/insideNavigation';
 import OutsideNavigation from './pages/outsideNavigation';
 import Restaurants from './pages/restaurants';
 import AccessibilityInformation from './pages/accessibilityInformation';
+import AccessLanding from './pages/accessLanding';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './App.css'
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
   {
     path: "/accessibility-information",
     element: <AccessibilityInformation />
+  },
+  {
+    path: "/accessLanding",
+    element: <AccessLanding />
   }
 ]);
 

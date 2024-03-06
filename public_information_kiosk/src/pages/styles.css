@@ -290,3 +290,18 @@ body {
     width: 70%;
     height: 100%;
 }
+
+.standardModeButton {
+    background-color: #EDEDED;
+    border: 2px solid #B82B35;
+    color: #B82B35;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    height: 120px;
+    width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

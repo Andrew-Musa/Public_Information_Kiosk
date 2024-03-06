@@ -25,6 +25,10 @@ export default function Landing() {
         window.location.href = "/information-type";
     }
 
+    const accessibilityToggle = () => {
+        window.location.href = "/accessLanding";
+    }
+
     return (
         <div>
             <h2 className="bounce-wave" style={{ textAlign: 'center', marginTop: '70px' }}>Welcome to the City of Calgary!</h2>
@@ -49,7 +53,7 @@ export default function Landing() {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '70px' }}>
-                <button className="accessModeButton"></button>
+                <button onClick={accessibilityToggle} className="accessModeButton"></button>
             </div>
             
         </div>
