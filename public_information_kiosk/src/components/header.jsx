@@ -12,7 +12,7 @@ export default function Header() {
                 <div>{time.toLocaleDateString("en-US", { weekday: "short", year: "numeric", month: "short", day: "numeric" })}</div>
                 <div>Weather: -30°C ⛅</div>
             </div>
-            <div className='header-logo'>
+            <div className='header-logo' style={{color: '#EDEDED', textShadow: '1px 1px 0 #B82B35, -1px -1px 0 #B82B35, 1px -1px 0 #B82B35, -1px 1px 0 #B82B35'}}>
                 YYC
             </div>
 

@@ -19,6 +19,16 @@ export default function OutsideNavigation() {
         setShowPopup(false);
     };
 
+    const [showPopup2, setShowPopup2] = useState(false);
+
+    const handleDirections = () => {
+        setShowPopup2(true);
+    };
+
+    const handleClosePopup2 = () => {
+        setShowPopup2(false);
+    };
+
     return (
         <div className='container'>
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Directions to Destination</h2>
@@ -72,8 +82,17 @@ export default function OutsideNavigation() {
                 </div>
             </div>
             <div className='d-flex justify-content-center pt-5'>
-                <button className='directionsButton'>Send Directions to My Phone</button>
+                <button onClick={handleDirections} className='directionsButton'>Send Directions to My Phone</button>
             </div>
+            {showPopup2 && (
+                <>
+                    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup2}></div>
+                    <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '20px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', zIndex: '9999' }}>
+                        <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup2}>X</button>
+                        <img className='qrImg' />
+                    </div>
+                </>
+            )}
         </div >
     )
 }

@@ -205,3 +205,28 @@ body {
     border: none;
     margin-top: 10px;
 }
+
+.qrImg {
+    background-image: url('../img/qr_code.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+}
+
+.bounce-wave {
+    animation: bounceWave 3s infinite;
+  }
+  
+  @keyframes bounceWave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
