@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Bento, Restaurant, RamenDining, SetMeal, RiceBowl, DinnerDining, SupportAgent, ArrowBack, Star, StarBorder } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+import { Context } from '../context';
 
 
 export default function Restaurants() {
-    const handleClick = () => {
-        window.location.href = "/public-information";
-    }
-
     const [showPopup, setShowPopup] = useState(false);
+    const [accessibleMode, _] = useContext(Context);
 
     const handleClickVolunteer = () => {
         setShowPopup(true);
@@ -18,9 +17,10 @@ export default function Restaurants() {
     };
     return (
         <div>
+            {accessibleMode && <div style={{ height: "100px" }}></div>}
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Restaurants</h2>
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <button onClick={handleClick} className="backButton">{'< Back'}</button>
+                <Link to='/public-information' className="backButton">{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
@@ -39,7 +39,7 @@ export default function Restaurants() {
                     <div className='flex-fill text-center'>Closest Proximity</div>
                 </div>
                 <div className='p-2'>
-                    <div className='card mt-1' onClick={() => { window.location.href = "./outside-navigation" }}>
+                    <Link className='card mt-1' to='/outside-navigation' style={{ textDecoration: "none" }}>
                         <div className='row p-2'>
                             <div className='col-2 d-flex justify-content-center align-items-center'>
                                 <Bento fontSize="large" />
@@ -56,9 +56,9 @@ export default function Restaurants() {
                                 <StarBorder fontSize='small' />
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className='card mt-1' onClick={() => { window.location.href = "./outside-navigation" }}>
+                    <Link className='card mt-1' to="/outside-navigation" style={{ textDecoration: "none" }}>
                         <div className='row p-2'>
                             <div className='col-2 d-flex justify-content-center align-items-center'>
                                 <Restaurant fontSize="large" />
@@ -75,9 +75,9 @@ export default function Restaurants() {
                                 <StarBorder fontSize='small' />
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className='card mt-1' onClick={() => { window.location.href = "./outside-navigation" }}>
+                    <Link className='card mt-1' to='/outside-navigation' style={{ textDecoration: "none" }}>
                         <div className='row p-2'>
                             <div className='col-2 d-flex justify-content-center align-items-center'>
                                 <RamenDining fontSize="large" />
@@ -94,9 +94,9 @@ export default function Restaurants() {
                                 <StarBorder fontSize='small' />
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className='card mt-1' onClick={() => { window.location.href = "./outside-navigation" }}>
+                    <Link className='card mt-1' to='/outside-navigation' style={{ textDecoration: "none" }}>
                         <div className='row p-2'>
                             <div className='col-2 d-flex justify-content-center align-items-center'>
                                 <SetMeal fontSize="large" />
@@ -113,9 +113,9 @@ export default function Restaurants() {
                                 <StarBorder fontSize='small' />
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className='card mt-1' onClick={() => { window.location.href = "./outside-navigation" }}>
+                    <Link className='card mt-1' to='/outside-navigation' style={{ textDecoration: "none" }}>
                         <div className='row p-2'>
                             <div className='col-2 d-flex justify-content-center align-items-center'>
                                 <RiceBowl fontSize="large" />
@@ -132,9 +132,9 @@ export default function Restaurants() {
                                 <StarBorder fontSize='small' />
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className='card mt-1' onClick={() => { window.location.href = "./outside-navigation" }}>
+                    <Link className='card mt-1' to='/outside-navigation' style={{ textDecoration: "none" }}>
                         <div className='row p-2'>
                             <div className='col-2 d-flex justify-content-center align-items-center'>
                                 <DinnerDining fontSize="large" />
@@ -151,7 +151,7 @@ export default function Restaurants() {
                                 <StarBorder fontSize='small' />
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
 
 

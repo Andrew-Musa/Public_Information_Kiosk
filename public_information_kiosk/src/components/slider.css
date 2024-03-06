@@ -16,7 +16,8 @@
 .slider-item {
   flex: 0 0 calc(25% - 20px);
   margin: 5px;
-  background-color: white;
+  text-decoration: none;
+  color: black;
 }
 
 .img-slider-img {
@@ -30,6 +31,7 @@
   border: 2px solid #B82B35;
   border-radius: 5px;
   cursor: pointer;
+  background-color: white;
 }
 
 .img-slider-text {
