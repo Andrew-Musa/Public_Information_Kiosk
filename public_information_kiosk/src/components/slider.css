@@ -16,6 +16,7 @@
 .slider-item {
   flex: 0 0 calc(25% - 20px);
   margin: 5px;
+  background-color: white;
 }
 
 .img-slider-img {
