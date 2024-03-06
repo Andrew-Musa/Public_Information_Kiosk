@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../context';
 import './styles.css';
 import SearchBar from '../components/searchBar';
+import { Link } from 'react-router-dom';
 
 export default function InformationType() {
     const [searchTerm, setSearchTerm] = useState('');
+    const [accessibleMode, _] = useContext(Context);
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
@@ -14,20 +17,6 @@ export default function InformationType() {
         // Handle search logic here, e.g., filtering data based on the search term
         console.log('Search term:', searchTerm);
     };
-
-    const handleClick = () => {
-        window.location.href = "/";
-    }
-
-    const handleAirportInfoClick = () => {
-        // Handle airport information button click logic here
-        window.location.href = "/airport-information";
-    }
-
-    const handleCalgaryInfoClick = () => {
-        window.location.href = "/public-information"
-    }
-
 
     const [showPopup, setShowPopup] = useState(false);
 
@@ -41,11 +30,12 @@ export default function InformationType() {
 
     return (
         <div>
+            {accessibleMode && <div style={{ height: "100px" }}></div>}
             <h3 style={{ textAlign: 'center', marginTop: '70px', marginBottom: '0' }}>Select the Type of Information</h3>
             <h3 style={{ textAlign: 'center', marginTop: '0' }}>You're Looking For</h3>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <button onClick={handleClick} className="backButton">{'< Back'}</button>
+                <Link to="/" className="backButton">{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
@@ -53,7 +43,7 @@ export default function InformationType() {
                     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>
                     <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '20px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', zIndex: '9999' }}>
                         <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup}>X</button>
-                        <p style={{marginTop: '15px'}}>A white-hat volunteer is on their way to give assistance.</p>
+                        <p style={{ marginTop: '15px' }}>A white-hat volunteer is on their way to give assistance.</p>
                     </div>
                 </>
             )}
@@ -64,12 +54,12 @@ export default function InformationType() {
 
             <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div><h1 style={{fontSize: '12px', marginTop: '15px', fontWeight: 'bold'}}>Airport Information</h1></div>
-                    <button onClick={handleAirportInfoClick} className="infoButton"></button>
+                    <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
+                    <Link to={"/airport-information"} className="infoButton"></Link>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <div><h1 style={{fontSize: '12px', marginTop: '15px', fontWeight: 'bold'}}>Calgary Information</h1></div>
-                    <button onClick={handleCalgaryInfoClick} className="infoButton2"></button>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
+                    <Link to={"/public-information"} className="infoButton2"></Link>
                 </div>
             </div>
 

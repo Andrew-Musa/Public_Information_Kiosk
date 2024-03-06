@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import "./ServiceSelection.css";
 import Slider from '../components/slider';
 import SearchBar from '../components/searchBar';
@@ -10,8 +10,10 @@ import airportHotels from '../img/airportHotel.png';
 import groundTransportations from '../img/groundTransportations.png';
 import parking from '../img/Parking.jpeg';
 import lounges from '../img/Lounges.png';
+import { Context } from '../context';
 
 export default function AirportInformation() {
+    const [accessibleMode, _] = useContext(Context)
     const imageDataGroup1 = [
         [
             { image: baggageClaim, alt: 'Image 1_1', text: 'Baggage Claim', href: "./inside-navigation" },
@@ -45,7 +47,7 @@ export default function AirportInformation() {
 
     return (
         <div>
-
+            {accessibleMode && <div style={{ height: "100px" }}></div>}
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>What are you Looking For?</h2>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>

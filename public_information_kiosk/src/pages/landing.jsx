@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../context';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const languages = ['Please Select Language', '请选择语言', 'Por favor seleccione idioma', 'Veuillez sélectionner la langue', 'الرجاء اختيار اللغة', 'براہ کرم زبان منتخب کریں', '言語を選択してください', 'ਕਿਰਪਾ ਕਰਕੇ ਭਾਸ਼ਾ ਚੁਣੋ'];
 
@@ -7,6 +9,7 @@ export default function Landing() {
     const [languageIndex, setLanguageIndex] = useState(0);
     const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
     const [selectLanguageText, setSelectLanguageText] = useState('Please Select Language');
+    const [accesibleMode, setAccesibleMode] = useContext(Context);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -21,41 +24,50 @@ export default function Landing() {
         setSelectLanguageText(languages[languageIndex]);
     }, [languageIndex]);
 
-    const handleClick = () => {
-        window.location.href = "/information-type";
+    const accessibilityToggle = () => {
+        setAccesibleMode(true);
     }
 
-    const accessibilityToggle = () => {
-        window.location.href = "/accessLanding";
+    const standardToggle = () => {
+        setAccesibleMode(false);
     }
 
     return (
         <div>
             <h2 className="bounce-wave" style={{ textAlign: 'center', marginTop: '70px' }}>Welcome to the City of Calgary!</h2>
 
-            <div className="text-container">
+            {!accesibleMode && <div className="text-container">
                 <h3>{selectLanguageText}</h3>
-            </div>
+            </div>}
 
+            {accesibleMode && <div>
+                <div style={{ textAlign: 'center', marginTop: '70px' }}>
+                    <button onClick={standardToggle} className="standardModeButton">Standard View</button>
+                </div>
+
+                <div className="text-container ">
+                    <h3>{selectLanguageText}</h3>
+                </div>
+            </div>}
             <div className="oval-container">
                 <div className="oval-row">
-                    <div onClick={handleClick} className="oval">English</div>
-                    <div onClick={handleClick} className="oval">普通话</div>
-                    <div onClick={handleClick} className="oval">Español</div>
-                    <div onClick={handleClick} className="oval">Français</div>
+                    <Link to={"./information-type"} className="oval">English</Link>
+                    <Link to={"./information-type"} className="oval">普通话</Link>
+                    <Link to={"./information-type"} className="oval">Español</Link>
+                    <Link to={"./information-type"} className="oval">Français</Link>
                 </div>
                 <div className="oval-row">
-                    <div onClick={handleClick} className="oval">العربية</div>
-                    <div onClick={handleClick} className="oval">اردو</div>
-                    <div onClick={handleClick} className="oval">日本語</div>
-                    <div onClick={handleClick} className="oval">ਪੰਜਾਬੀ</div>
+                    <Link to={"./information-type"} className="oval">العربية</Link>
+                    <Link to={"./information-type"} className="oval">اردو</Link>
+                    <Link to={"./information-type"} className="oval">日本語</Link>
+                    <Link to={"./information-type"} className="oval">ਪੰਜਾਬੀ</Link>
                 </div>
             </div>
 
-            <div style={{ textAlign: 'center', marginTop: '70px' }}>
+            {!accesibleMode && <div style={{ textAlign: 'center', marginTop: '70px' }}>
                 <button onClick={accessibilityToggle} className="accessModeButton"></button>
-            </div>
-            
+            </div>}
+
         </div>
     );
 }
