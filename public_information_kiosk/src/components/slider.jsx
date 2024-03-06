@@ -3,7 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import "./slider.css"
 
-const Slider = ({ imageDataGroup1, imageDataGroup2, destination }) => {
+const Slider = ({ imageDataGroup1, imageDataGroup2 }) => {
   const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
 
   const currentImageData = currentGroupIndex === 0 ? imageDataGroup1 : imageDataGroup2;
@@ -23,7 +23,7 @@ const Slider = ({ imageDataGroup1, imageDataGroup2, destination }) => {
       {currentImageData.map((row, rowIndex) => (
         <div key={rowIndex} className="slider-row">
           {row.map((item, index) => (
-            <div key={index} className="slider-item" onClick={() => { window.location.href = destination }}>
+            <div key={index} className="slider-item" onClick={() => { window.location.href = item.href }}>
               <img src={item.image} alt={item.alt} className="img-slider-img" />
               <p className='img-slider-text'>{item.text}</p>
             </div>
