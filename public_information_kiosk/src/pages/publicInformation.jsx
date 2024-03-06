@@ -48,7 +48,7 @@ export default function PublicInformation() {
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>What are you Looking For?</h2>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to="/information-type" className="backButton">{'< Back'}</Link>
+                <Link to="/information-type" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (

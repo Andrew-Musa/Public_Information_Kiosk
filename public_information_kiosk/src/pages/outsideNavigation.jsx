@@ -28,11 +28,11 @@ export default function OutsideNavigation() {
     };
 
     return (
-        <div className='container'>
+        <div>
             {accessibleMode && <div style={{ height: "100px" }}></div>}
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Directions to Destination</h2>
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to="/public-information" className="backButton">{'< Back'}</Link>
+                <Link to="/public-information" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
@@ -44,21 +44,6 @@ export default function OutsideNavigation() {
                     </div>
                 </>
             )}
-
-            {/* <div>
-                <button className='mapButtons'>
-                    <ZoomIn />
-                </button>
-                <button className='mapButtons'>
-                    <ZoomOut />
-                </button>
-                <button className='mapButtons'>
-                    <Explore />
-                </button>
-                <button className='mapButtons'>
-                    <RotateLeft />
-                </button>
-            </div> */}
 
             <div className='mapContainer2'>
                 <div className='destinationInfo'>
