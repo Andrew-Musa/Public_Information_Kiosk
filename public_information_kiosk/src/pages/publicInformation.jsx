@@ -8,8 +8,8 @@ import Entertainments from '../img/entertaments.png';
 import Accommodations from '../img/Accomondations.png';
 import Transportations from '../img/Transportation.jpeg';
 import shopping from '../img/shopping.png';
-import cuisines from '../img/cuisines.png';
 import museum from '../img/museum.png';
+import landmark_logo from '../img/landmark_logo.png';
 import { Link } from 'react-router-dom';
 import { Context } from '../context';
 
@@ -24,7 +24,7 @@ export default function PublicInformation() {
         [
             { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "/outside-navigation" },
             { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "/outside-navigation" },
-            { image: cuisines, alt: 'Image 1_3', text: 'Cuisines', href: "/outside-navigation" },
+            { image: landmark_logo, alt: 'landmark_logo', text: 'Landmarks', href: "/outside-navigation" },
             { image: museum, alt: 'Image 1_4', text: 'Museum', href: "/outside-navigation" }
         ]
     ];
