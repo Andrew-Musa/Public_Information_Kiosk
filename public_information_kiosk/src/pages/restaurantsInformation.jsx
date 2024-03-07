@@ -14,9 +14,9 @@ import Greek from '../img/Greek.png';
 
 export default function RestaurantsInformation() {
     const imageDataGroup1 = [
-        [{ image: Chinese, alt: 'Image 1_1', text: 'Chinese' }, { image: Pizza, alt: 'Image 1_2', text: 'Italian' }, { image: Japanese, alt: 'Ima', text: 'Japanese' }, { image: Indian, alt: 'Image 1_4', text: 'Indian' }],
-        [{ image: Maxican, alt: 'Image 1_5', text: 'Maxican' }, { image: Thai, alt: 'Image 1_6', text: 'Thai' },
-        { image: French, alt: 'Image 1_3', text: 'French' }, { image: Greek, alt: 'Image 1_4', text: 'Greek' }]
+        [{ image: Chinese, alt: 'Image 1_1', text: 'Chinese', href: "/restaurants" }, { image: Pizza, alt: 'Image 1_2', text: 'Italian' , href: "/restaurants"}, { image: Japanese, alt: 'Ima', text: 'Japanese', href: "/restaurants" }, { image: Indian, alt: 'Image 1_4', text: 'Indian',href: "/restaurants" }],
+        [{ image: Maxican, alt: 'Image 1_5', text: 'Maxican', href: "/restaurants" }, { image: Thai, alt: 'Image 1_6', text: 'Thai' ,href: "/restaurants"},
+        { image: French, alt: 'Image 1_3', text: 'French',href: "/restaurants" }, { image: Greek, alt: 'Image 1_4', text: 'Greek', href: "/restaurants" }],
     ];
 
     const imageDataGroup2 = []
