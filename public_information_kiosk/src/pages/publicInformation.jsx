@@ -15,8 +15,8 @@ export default function PublicInformation() {
     const imageDataGroup1 = [
         [
             { image: Attractions, alt: 'Image 1_1', text: 'Attractions', href: "./inside-navigation" },
-            { image: Restaurant, alt: 'Image 1_2', text: 'Restaurants', href: "./restaurants" },
-            { image: Entertainments, alt: 'Ima', text: 'Flight Information', href: "./inside-navigation" },
+            { image: Restaurant, alt: 'Image 1_2', text: 'Restaurants', href: "./restaurants-information" },
+            { image: Entertainments, alt: 'Ima', text: 'Entertainments', href: "./inside-navigation" },
             { image: Accommodations, alt: 'Image 1_4', text: 'Housing', href: "./inside-navigation" }
         ],
         [
