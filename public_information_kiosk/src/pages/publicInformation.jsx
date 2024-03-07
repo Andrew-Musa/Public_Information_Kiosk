@@ -24,7 +24,7 @@ export default function PublicInformation() {
         [
             { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "/outside-navigation" },
             { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "/outside-navigation" },
-            { image: cuisines, alt: 'Image 1_3', text: 'Cuisines', href: "/outside-navigation" },
+            { image: cuisines, alt: 'Image 1_3', text: 'Cuisines', href: "/restaurants-information" },
             { image: museum, alt: 'Image 1_4', text: 'Museum', href: "/outside-navigation" }
         ]
     ];
@@ -48,7 +48,7 @@ export default function PublicInformation() {
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>What are you Looking For?</h2>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to="/information-type" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
+                <Link to="/information-type" className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
