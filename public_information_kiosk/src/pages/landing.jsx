@@ -51,16 +51,16 @@ export default function Landing() {
             </div>}
             <div className="oval-container">
                 <div className="oval-row">
-                    <Link to={"./information-type"} className="oval">English</Link>
-                    <Link to={"./information-type"} className="oval">普通话</Link>
-                    <Link to={"./information-type"} className="oval">Español</Link>
-                    <Link to={"./information-type"} className="oval">Français</Link>
+                    <Link to={"./information-type"} className="oval" style={{textDecoration: 'none'}}>English</Link>
+                    <Link to={"./information-type"} className="oval" style={{textDecoration: 'none'}}>普通话</Link>
+                    <Link to={"./information-type"} className="oval" style={{textDecoration: 'none'}}>Español</Link>
+                    <Link to={"./information-type"} className="oval" style={{textDecoration: 'none'}}>Français</Link>
                 </div>
                 <div className="oval-row">
-                    <Link to={"./information-type"} className="oval">العربية</Link>
-                    <Link to={"./information-type"} className="oval">اردو</Link>
-                    <Link to={"./information-type"} className="oval">日本語</Link>
-                    <Link to={"./information-type"} className="oval">ਪੰਜਾਬੀ</Link>
+                    <Link to={"./information-type"} className="oval" style={{textDecoration: 'none'}}>العربية</Link>
+                    <Link to={"./information-type"} className="oval" style={{textDecoration: 'none'}}>اردو</Link>
+                    <Link to={"./information-type"} className="oval" style={{textDecoration: 'none'}}>日本語</Link>
+                    <Link to={"./information-type"} className="oval" style={{textDecoration: 'none'}}>ਪੰਜਾਬੀ</Link>
                 </div>
             </div>
 

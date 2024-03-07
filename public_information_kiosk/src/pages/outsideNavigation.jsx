@@ -28,11 +28,11 @@ export default function OutsideNavigation() {
     };
 
     return (
-        <div className='container'>
+        <div>
             {accessibleMode && <div style={{ height: "100px" }}></div>}
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Directions to Destination</h2>
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to="/public-information" className="backButton">{'< Back'}</Link>
+                <Link to="/public-information" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
@@ -45,37 +45,22 @@ export default function OutsideNavigation() {
                 </>
             )}
 
-            {/* <div>
-                <button className='mapButtons'>
-                    <ZoomIn />
-                </button>
-                <button className='mapButtons'>
-                    <ZoomOut />
-                </button>
-                <button className='mapButtons'>
-                    <Explore />
-                </button>
-                <button className='mapButtons'>
-                    <RotateLeft />
-                </button>
-            </div> */}
-
             <div className='mapContainer2'>
                 <div className='destinationInfo'>
                     <img className='destinationImg' />
-                    <h1 style={{ fontSize: '10px', marginLeft: '10px', marginBottom: '0', marginTop: '5px' }}>Restaurant Name</h1>
-                    <Star style={{ fontSize: '10px', marginTop: '0px', marginLeft: '25px' }} />
-                    <Star style={{ fontSize: '10px', marginTop: '0px' }} />
-                    <Star style={{ fontSize: '10px', marginTop: '0px' }} />
-                    <Star style={{ fontSize: '10px', marginTop: '0px' }} />
-                    <Star style={{ fontSize: '10px', marginTop: '0px' }} />
-                    <p style={{ fontSize: '8px', textAlign: 'left', marginLeft: '5px' }}>Description of how yummy, tasty, and delicious, the food is.</p>
+                    <h1 style={{ fontSize: '10px', marginLeft: '17px', marginBottom: '0', marginTop: '5px' }}>Restaurant Name</h1>
+                    <Star style={{ fontSize: '10px', marginTop: '0px', marginLeft: '35px', color: 'orange' }} />
+                    <Star style={{ fontSize: '10px', marginTop: '0px', color: 'orange' }} />
+                    <Star style={{ fontSize: '10px', marginTop: '0px', color: 'orange' }} />
+                    <Star style={{ fontSize: '10px', marginTop: '0px', color: 'orange' }} />
+                    <Star style={{ fontSize: '10px', marginTop: '0px', color: 'orange' }} />
+                    <p style={{ fontSize: '8px', textAlign: 'left', marginLeft: '5px', paddingRight: '5px' }}>Description of how yummy, tasty, and delicious, the food is.</p>
                 </div>
                 <img className='outsideMap' />
-                <ZoomIn style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '345px', cursor: 'pointer', border: '1px solid black' }} />
-                <ZoomOut style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '315px', cursor: 'pointer', border: '1px solid black' }} />
-                <Explore style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '285px', cursor: 'pointer', border: '1px solid black' }} />
-                <RotateLeft style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '255px', cursor: 'pointer', border: '1px solid black' }} />
+                <ZoomIn style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '365px', cursor: 'pointer', border: '1px solid black' }} />
+                <ZoomOut style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '335px', cursor: 'pointer', border: '1px solid black' }} />
+                <Explore style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '305px', cursor: 'pointer', border: '1px solid black' }} />
+                <RotateLeft style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '275px', cursor: 'pointer', border: '1px solid black' }} />
             </div>
 
             <div className='d-flex justify-content-center pt-5'>

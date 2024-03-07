@@ -30,12 +30,11 @@ export default function InformationType() {
 
     return (
         <div>
-            {accessibleMode && <div style={{ height: "100px" }}></div>}
-            <h3 style={{ textAlign: 'center', marginTop: '70px', marginBottom: '0' }}>Select the Type of Information</h3>
-            <h3 style={{ textAlign: 'center', marginTop: '0' }}>You're Looking For</h3>
+            {accessibleMode && <div style={{ height: "101px" }}></div>}
+            <h3 style={{ textAlign: 'center', marginTop: '70px', marginBottom: '0' }}>Select Type of Information</h3>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to="/" className="backButton">{'< Back'}</Link>
+                <Link to="/" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
@@ -53,14 +52,34 @@ export default function InformationType() {
             </div>
 
             <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
-                    <Link to={"/airport-information"} className="infoButton"></Link>
+                {accessibleMode?
+                <div className='d-flex'>
+                    {/* Accessible Mode */}
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
+                        <Link to={"/airport-information"} className="infoButton" style={{width: '100px', height: '150px'}}></Link>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
+                        <Link to={"/public-information"} className="infoButton2" style={{width: '100px', height: '150px'}}></Link>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Accessiblity Information</h1></div>
+                        <Link to={"/public-information"} className="infoButton3" style={{width: '100px', height: '150px'}}></Link>
+                    </div>
+                </div> :
+                <div className='d-flex'>
+                    {/* Standard View */}
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
+                        <Link to={"/airport-information"} className="infoButton"></Link>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
+                        <Link to={"/public-information"} className="infoButton2"></Link>
+                    </div>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
-                    <Link to={"/public-information"} className="infoButton2"></Link>
-                </div>
+                }
             </div>
 
 
