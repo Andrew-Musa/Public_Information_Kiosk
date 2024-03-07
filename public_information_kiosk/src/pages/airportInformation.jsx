@@ -11,27 +11,24 @@ import groundTransportations from '../img/groundTransportations.png';
 import parking from '../img/Parking.jpeg';
 import lounges from '../img/Lounges.png';
 import { Context } from '../context';
+import { Link } from 'react-router-dom';
 
 export default function AirportInformation() {
     const [accessibleMode, _] = useContext(Context)
     const imageDataGroup1 = [
         [
-            { image: baggageClaim, alt: 'Image 1_1', text: 'Baggage Claim', href: "./inside-navigation" },
-            { image: currencyExchange, alt: 'Image 1_2', text: 'Currency Exchange', href: "./inside-navigation" },
-            { image: flightInformation, alt: 'Ima', text: 'Flight Information', href: "./inside-navigation" },
-            { image: airportDirections, alt: 'Image 1_4', text: 'Airport Directions', href: "./inside-navigation" }
+            { image: baggageClaim, alt: 'Image 1_1', text: 'Baggage Claim', href: "/inside-navigation" },
+            { image: currencyExchange, alt: 'Image 1_2', text: 'Currency Exchange', href: "/inside-navigation" },
+            { image: flightInformation, alt: 'Ima', text: 'Flight Information', href: "/inside-navigation" },
+            { image: airportDirections, alt: 'Image 1_4', text: 'Airport Directions', href: "/inside-navigation" }
         ],
         [
-            { image: airportHotels, alt: 'Image 1_5', text: 'Airport Hotels', href: "./inside-navigation" },
-            { image: groundTransportations, alt: 'Image 1_6', text: 'Ground Transports', href: "./inside-navigation" },
-            { image: parking, alt: 'Image 1_3', text: 'Parking', href: "./inside-navigation" },
-            { image: lounges, alt: 'Image 1_4', text: 'Lounges', href: "./inside-navigation" }
+            { image: airportHotels, alt: 'Image 1_5', text: 'Airport Hotels', href: "/inside-navigation" },
+            { image: groundTransportations, alt: 'Image 1_6', text: 'Ground Transports', href: "/inside-navigation" },
+            { image: parking, alt: 'Image 1_3', text: 'Parking', href: "/inside-navigation" },
+            { image: lounges, alt: 'Image 1_4', text: 'Lounges', href: "/inside-navigation" }
         ]
     ];
-
-    const handleClick = () => {
-        window.location.href = "/information-type";
-    }
 
     const imageDataGroup2 = []
 
@@ -51,7 +48,7 @@ export default function AirportInformation() {
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>What are you Looking For?</h2>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <button onClick={handleClick} className="backButton">{'< Back'}</button>
+                <Link to={"/information-type"} className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (

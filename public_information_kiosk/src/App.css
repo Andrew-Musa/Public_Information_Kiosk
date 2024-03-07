@@ -17,3 +17,7 @@
 .inside-navigation-container {
   margin-top: 100px;
 }
+
+a {
+  text-decoration: none;
+}

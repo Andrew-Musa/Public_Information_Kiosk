@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import "./ServiceSelection.css";
 import Slider from '../components/slider';
 import SearchBar from '../components/searchBar';
@@ -10,30 +10,29 @@ import Transportations from '../img/Transportation.jpeg';
 import shopping from '../img/shopping.png';
 import cuisines from '../img/cuisines.png';
 import museum from '../img/museum.png';
+import { Link } from 'react-router-dom';
+import { Context } from '../context';
 
 export default function PublicInformation() {
     const imageDataGroup1 = [
         [
-            { image: Attractions, alt: 'Image 1_1', text: 'Attractions', href: "./inside-navigation" },
-            { image: Restaurant, alt: 'Image 1_2', text: 'Restaurants', href: "./restaurants-information" },
-            { image: Entertainments, alt: 'Ima', text: 'Entertainments', href: "./inside-navigation" },
-            { image: Accommodations, alt: 'Image 1_4', text: 'Housing', href: "./inside-navigation" }
+            { image: Attractions, alt: 'Image 1_1', text: 'Attractions', href: "/outside-navigation" },
+            { image: Restaurant, alt: 'Image 1_2', text: 'Restaurants', href: "/restaurants" },
+            { image: Entertainments, alt: 'Ima', text: 'Flight Information', href: "/outside-navigation" },
+            { image: Accommodations, alt: 'Image 1_4', text: 'Housing', href: "/outside-navigation" }
         ],
         [
-            { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "./inside-navigation" },
-            { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "./inside-navigation" },
-            { image: cuisines, alt: 'Image 1_3', text: 'Cuisines', href: "./inside-navigation" },
-            { image: museum, alt: 'Image 1_4', text: 'Museum', href: "./inside-navigation" }
+            { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "/outside-navigation" },
+            { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "/outside-navigation" },
+            { image: cuisines, alt: 'Image 1_3', text: 'Cuisines', href: "/outside-navigation" },
+            { image: museum, alt: 'Image 1_4', text: 'Museum', href: "/outside-navigation" }
         ]
     ];
-
-    const handleClick = () => {
-        window.location.href = "/information-type";
-    }
 
     const imageDataGroup2 = []
 
     const [showPopup, setShowPopup] = useState(false);
+    const [accessibleMode, _] = useContext(Context);
 
     const handleClickVolunteer = () => {
         setShowPopup(true);
@@ -45,11 +44,11 @@ export default function PublicInformation() {
 
     return (
         <div>
-
+            {accessibleMode && <div style={{ height: "100px" }}></div>}
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>What are you Looking For?</h2>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <button onClick={handleClick} className="backButton">{'< Back'}</button>
+                <Link to="/information-type" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
