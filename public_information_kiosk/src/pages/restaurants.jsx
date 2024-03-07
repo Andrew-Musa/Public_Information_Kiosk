@@ -181,6 +181,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../context';
 import { Bento, Restaurant, RamenDining, SetMeal, RiceBowl, DinnerDining, Star, StarBorder } from '@mui/icons-material';
+import { FaFilter } from 'react-icons/fa';
 
 export default function Restaurants() {
     const [showPopup, setShowPopup] = useState(false);
@@ -240,6 +241,7 @@ export default function Restaurants() {
                     <div onClick={proximityClicked} className='flex-fill text-center' style={{width: '50%', borderRadius: '3px', cursor: 'pointer', border: '1px solid #000000', backgroundColor: activeButton === 'proximity' ? '#B82B35' : 'transparent', color: activeButton === 'proximity' ? 'white' : 'black'}}>Closest Proximity</div>
                 </div>
                 <div className='p-2'>
+                    <button className='filterButton' style={{display: 'flex', border: '2px solid #B82B35', borderRadius: '5px', backgroundColor: '#EDEDED', color: '#B82B35', paddingRight: '10px', paddingLeft: '10px', paddingTop: '7px'}}><FaFilter fontSize='small' /> <h1 style={{fontSize: '12px', marginLeft: '5px'}}>Filter</h1></button>
                     {restaurants.map((restaurant, index) => (
                         <Link key={index} className='card mt-1' to='/outside-navigation' style={{ textDecoration: "none" }}>
                             <div className='row p-2'>
@@ -251,11 +253,11 @@ export default function Restaurants() {
                                     <div>{restaurant.location}</div>
                                 </div>
                                 <div className='col-4'>
-                                    <Star fontSize='small' style={{marginTop: '5px'}}/>
-                                    <Star fontSize='small' style={{marginTop: '5px'}} />
-                                    <Star fontSize='small' style={{marginTop: '5px'}} />
-                                    <Star fontSize='small' style={{marginTop: '5px'}} />
-                                    <StarBorder fontSize='small' style={{marginTop: '5px'}} />
+                                    <Star fontSize='small' style={{marginTop: '5px', color: 'orange'}}/>
+                                    <Star fontSize='small' style={{marginTop: '5px', color: 'orange'}} />
+                                    <Star fontSize='small' style={{marginTop: '5px', color: 'orange'}} />
+                                    <Star fontSize='small' style={{marginTop: '5px', color: 'orange'}} />
+                                    <StarBorder fontSize='small' style={{marginTop: '5px', color: 'orange'}} />
                                 </div>
                             </div>
                         </Link>
