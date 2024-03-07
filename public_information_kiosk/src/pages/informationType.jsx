@@ -52,14 +52,34 @@ export default function InformationType() {
             </div>
 
             <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
-                    <Link to={"/airport-information"} className="infoButton"></Link>
+                {accessibleMode?
+                <div className='d-flex'>
+                    {/* Accessible Mode */}
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
+                        <Link to={"/airport-information"} className="infoButton" style={{width: '100px', height: '150px'}}></Link>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
+                        <Link to={"/public-information"} className="infoButton2" style={{width: '100px', height: '150px'}}></Link>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Accessiblity Information</h1></div>
+                        <Link to={"/public-information"} className="infoButton3" style={{width: '100px', height: '150px'}}></Link>
+                    </div>
+                </div> :
+                <div className='d-flex'>
+                    {/* Standard View */}
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
+                        <Link to={"/airport-information"} className="infoButton"></Link>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
+                        <Link to={"/public-information"} className="infoButton2"></Link>
+                    </div>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
-                    <Link to={"/public-information"} className="infoButton2"></Link>
-                </div>
+                }
             </div>
 
 
