@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Map, Marker } from "pigeon-maps"
+import { Map, Marker, ZoomControl } from "pigeon-maps"
 import { ZoomIn, ZoomOut, RotateLeft, Explore, SupportAgent, ArrowBack, Star, StarBorder } from '@mui/icons-material';
 import './styles.css';
 import { Context } from '../context';
@@ -72,11 +72,12 @@ export default function OutsideNavigation() {
                 {/* <img className='outsideMap' /> */}
                 <Map height={195} width={270} defaultCenter={[51.0447, -114.0719]} defaultZoom={11}>
                     <Marker width={50} anchor={[51.0447, -114.0719]} />
+                    <ZoomControl />
                 </Map>
-                <ZoomIn style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '365px', cursor: 'pointer', border: '1px solid black' }} />
+                {/* <ZoomIn style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '365px', cursor: 'pointer', border: '1px solid black' }} />
                 <ZoomOut style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '335px', cursor: 'pointer', border: '1px solid black' }} />
                 <Explore style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '305px', cursor: 'pointer', border: '1px solid black' }} />
-                <RotateLeft style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '275px', cursor: 'pointer', border: '1px solid black' }} />
+                <RotateLeft style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '275px', cursor: 'pointer', border: '1px solid black' }} /> */}
             </div>
 
             <div className='d-flex justify-content-center pt-5'>
