@@ -51,10 +51,6 @@ export default function RestaurantsInformation() {
 
             <div className="slider-container"></div>
             <Slider imageDataGroup1={imageDataGroup1} imageDataGroup2={imageDataGroup2} />
-
-
-
-
         </div>
     )
 }

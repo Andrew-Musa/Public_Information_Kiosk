@@ -33,6 +33,7 @@ export default function PublicInformation() {
 
     const [showPopup, setShowPopup] = useState(false);
     const [accessibleMode, _] = useContext(Context);
+    const [showSearchResults, setShowSearchResults] = useState(false);
 
     const handleClickVolunteer = () => {
         setShowPopup(true);
@@ -62,15 +63,13 @@ export default function PublicInformation() {
             )}
 
             <div className="search-bar-container">
-                <SearchBar />
+                <SearchBar setShowSearchResults={setShowSearchResults} />
             </div>
 
 
-            <div className="slider-container"></div>
-            <Slider imageDataGroup1={imageDataGroup1} imageDataGroup2={imageDataGroup2} />
-
-
-
+            {!showSearchResults && <div className="slider-container">
+                <Slider imageDataGroup1={imageDataGroup1} imageDataGroup2={imageDataGroup2} />
+            </div>}
 
         </div>
     )

@@ -7,15 +7,10 @@ import { Link } from 'react-router-dom';
 export default function InformationType() {
     const [searchTerm, setSearchTerm] = useState('');
     const [accessibleMode, _] = useContext(Context);
+    const [showSearchResults, setShowSearchResults] = useState(false);
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Handle search logic here, e.g., filtering data based on the search term
-        console.log('Search term:', searchTerm);
     };
 
     const [showPopup, setShowPopup] = useState(false);
@@ -34,7 +29,7 @@ export default function InformationType() {
             <h3 style={{ textAlign: 'center', marginTop: '70px', marginBottom: '0' }}>Select Type of Information</h3>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to="/" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
+                <Link to="/" className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
@@ -48,40 +43,40 @@ export default function InformationType() {
             )}
 
             <div className="search-bar-container">
-                <SearchBar />
+                <SearchBar setShowSearchResults={setShowSearchResults} />
             </div>
 
-            <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
-                {accessibleMode?
-                <div className='d-flex'>
-                    {/* Accessible Mode */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
-                        <Link to={"/airport-information"} className="infoButton" style={{width: '100px', height: '150px'}}></Link>
+            {!showSearchResults && <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
+                {accessibleMode ?
+                    <div className='d-flex'>
+                        {/* Accessible Mode */}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
+                            <Link to={"/airport-information"} className="infoButton" style={{ width: '100px', height: '150px' }}></Link>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
+                            <Link to={"/public-information"} className="infoButton2" style={{ width: '100px', height: '150px' }}></Link>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Accessiblity Information</h1></div>
+                            <Link to={"/public-information"} className="infoButton3" style={{ width: '100px', height: '150px' }}></Link>
+                        </div>
+                    </div> :
+                    <div className='d-flex'>
+                        {/* Standard View */}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
+                            <Link to={"/airport-information"} className="infoButton"></Link>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
+                            <Link to={"/public-information"} className="infoButton2"></Link>
+                        </div>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
-                        <Link to={"/public-information"} className="infoButton2" style={{width: '100px', height: '150px'}}></Link>
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <div><h1 style={{ fontSize: '10px', marginTop: '15px', fontWeight: 'bold' }}>Accessiblity Information</h1></div>
-                        <Link to={"/public-information"} className="infoButton3" style={{width: '100px', height: '150px'}}></Link>
-                    </div>
-                </div> :
-                <div className='d-flex'>
-                    {/* Standard View */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Airport Information</h1></div>
-                        <Link to={"/airport-information"} className="infoButton"></Link>
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <div><h1 style={{ fontSize: '12px', marginTop: '15px', fontWeight: 'bold' }}>Calgary Information</h1></div>
-                        <Link to={"/public-information"} className="infoButton2"></Link>
-                    </div>
-                </div>
                 }
             </div>
-
+            }
 
         </div>
     );

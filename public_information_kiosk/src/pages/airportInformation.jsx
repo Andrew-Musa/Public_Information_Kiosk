@@ -33,6 +33,7 @@ export default function AirportInformation() {
     const imageDataGroup2 = []
 
     const [showPopup, setShowPopup] = useState(false);
+    const [showSearchResults, setShowSearchResults] = useState(false);
 
     const handleClickVolunteer = () => {
         setShowPopup(true);
@@ -48,7 +49,7 @@ export default function AirportInformation() {
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>What are you Looking For?</h2>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to={"/information-type"} className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
+                <Link to={"/information-type"} className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
@@ -62,16 +63,13 @@ export default function AirportInformation() {
             )}
 
             <div className="search-bar-container">
-                <SearchBar />
+                <SearchBar setShowSearchResults={setShowSearchResults} />
             </div>
 
 
-            <div className="slider-container"></div>
-            <Slider imageDataGroup1={imageDataGroup1} imageDataGroup2={imageDataGroup2} />
-
-
-
-
+            {!showSearchResults && <div className="slider-container">
+                <Slider imageDataGroup1={imageDataGroup1} imageDataGroup2={imageDataGroup2} />
+            </div>}
         </div>
     )
 }
