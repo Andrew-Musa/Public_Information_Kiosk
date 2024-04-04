@@ -34,6 +34,8 @@ export default function OutsideNavigation() {
         setShowPopup2(false);
     };
 
+    const position = {lat: 51.0447, lng: -114.0719};
+
     return (
         <div>
             {accessibleMode && <div style={{ height: "100px" }}></div>}
@@ -67,7 +69,10 @@ export default function OutsideNavigation() {
                     <Star style={{ fontSize: '10px', marginTop: '0px', color: 'orange' }} />
                     <p style={{ fontSize: '8px', textAlign: 'left', marginLeft: '5px', paddingRight: '5px' }}>Description of how yummy, tasty, and delicious, the food is. Estimated time to arrive by car is 15 minutes.</p>
                 </div>
-                <img className='outsideMap' />
+                {/* <img className='outsideMap' /> */}
+                <Map height={195} width={270} defaultCenter={[51.0447, -114.0719]} defaultZoom={11}>
+                    <Marker width={50} anchor={[51.0447, -114.0719]} />
+                </Map>
                 <ZoomIn style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '365px', cursor: 'pointer', border: '1px solid black' }} />
                 <ZoomOut style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '335px', cursor: 'pointer', border: '1px solid black' }} />
                 <Explore style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '305px', cursor: 'pointer', border: '1px solid black' }} />
