@@ -61,7 +61,7 @@ export default function InsideNavigation() {
                 <Explore style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '305px', cursor: 'pointer', border: '1px solid black' }} />
                 <RotateLeft style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '275px', cursor: 'pointer', border: '1px solid black' }} />
             </div>
-            <p style={{ fontSize: '10px', marginLeft: '22px', fontWeight: 'bold', marginTop: '5px' }}>Open Hours: 8:00 AM-4:00 PM (MST) phone: (888) 888-8888.</p>
+            <p style={{ fontSize: '10px', marginLeft: '22px', fontWeight: 'bold', marginTop: '5px' }}>Open Hours: 8:00 AM-4:00 PM (MST) phone: (888) 888-8888. 5 minute walk.</p>
 
             <div className='d-flex justify-content-center pt-5'>
                 <button onClick={handleDirections} className='directionsButton'>Send Directions to My Phone</button>

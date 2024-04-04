@@ -65,7 +65,7 @@ export default function OutsideNavigation() {
                     <Star style={{ fontSize: '10px', marginTop: '0px', color: 'orange' }} />
                     <Star style={{ fontSize: '10px', marginTop: '0px', color: 'orange' }} />
                     <Star style={{ fontSize: '10px', marginTop: '0px', color: 'orange' }} />
-                    <p style={{ fontSize: '8px', textAlign: 'left', marginLeft: '5px', paddingRight: '5px' }}>Description of how yummy, tasty, and delicious, the food is.</p>
+                    <p style={{ fontSize: '8px', textAlign: 'left', marginLeft: '5px', paddingRight: '5px' }}>Description of how yummy, tasty, and delicious, the food is. Estimated time to arrive by car is 15 minutes.</p>
                 </div>
                 <img className='outsideMap' />
                 <ZoomIn style={{ color: '#B82B35', backgroundColor: 'white', borderRadius: '5px', marginTop: '170px', position: 'absolute', marginLeft: '365px', cursor: 'pointer', border: '1px solid black' }} />
