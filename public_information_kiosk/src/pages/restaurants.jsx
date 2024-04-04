@@ -222,7 +222,7 @@ export default function Restaurants() {
             {accessibleMode && <div style={{ height: "100px" }}></div>}
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Restaurants</h2>
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to='/public-information' className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
+                <Link to='/restaurants-information' className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
