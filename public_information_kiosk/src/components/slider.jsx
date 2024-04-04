@@ -19,8 +19,8 @@ const Slider = ({ imageDataGroup1, imageDataGroup2 }) => {
 
   return (
     <div className="slider">
-      <button className='img-slider-btn' style={{ left: 0 }} onClick={handlePrevGroup}><IoIosArrowBack /></button>
-      <button className='img-slider-btn' style={{ right: 0 }} onClick={handleNextGroup}><IoIosArrowForward /></button>
+      {/* <button className='img-slider-btn' style={{ left: 0 }} onClick={handlePrevGroup}><IoIosArrowBack /></button>
+      <button className='img-slider-btn' style={{ right: 0 }} onClick={handleNextGroup}><IoIosArrowForward /></button> */}
       {currentImageData.map((row, rowIndex) => (
         <div key={rowIndex} className="slider-row">
           {row.map((item, index) => (
