@@ -82,42 +82,43 @@ body {
     margin-top: 20px;
     font-size: 11px;
     text-align: center;
-  }
-  
-  .paginationButton {
+}
+
+.paginationButton {
     background-color: white;
     color: #B82B35;
     font-size: 25px;
     border: none;
     cursor: pointer;
     padding: 5px 10px;
-  }
-  
-  .squaresContainer {
+}
+
+.squaresContainer {
     display: grid;
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: repeat(2, 80px);
     grid-gap: 10px;
-  }
-  
-  .square, .description {
+}
+
+.square,
+.description {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #ccc;
-  }
-  
-  .square {
+}
+
+.square {
     background-color: lightblue;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .description {
+}
+
+.description {
     background-color: lightgreen;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
 
 .infoButton {
     background-image: url('../img/yyc_airport.jpg');
@@ -238,16 +239,19 @@ body {
 
 .bounce-wave {
     animation: bounceWave 3s infinite;
-  }
-  
-  @keyframes bounceWave {
-    0%, 100% {
-      transform: translateY(0);
+}
+
+@keyframes bounceWave {
+
+    0%,
+    100% {
+        transform: translateY(0);
     }
+
     50% {
-      transform: translateY(-10px);
+        transform: translateY(-10px);
     }
-  }
+}
 
 .mapContainer {
     background-image: url('../img/indoor_map.png');
@@ -322,4 +326,19 @@ body {
     height: 120px;
     width: 120px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.keyboard {
+    width: 100vw;
+    left: 0;
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.mappedin-map-inpage {
+    max-width: 200px;
 }

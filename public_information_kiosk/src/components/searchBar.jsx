@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { FaSearch } from "react-icons/fa";
 import "./searchBar.css";
 import { Link } from 'react-router-dom';
+import Keyboard from 'react-simple-keyboard';
+import 'react-simple-keyboard/build/css/index.css';
 
 const db = [
   { text: "Baggage Claim", href: "/inside-navigation" },
@@ -25,16 +27,16 @@ const db = [
 export default function SearchBar({ setShowSearchResults }) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
+  const [showKeyboard, setShowKeyboard] = useState(false);
 
-  const handleInputChange = (e) => {
-    const currentInput = e.currentTarget.value
+  const handleInputChange = (currentInput) => {
     setInput(currentInput);
     if (currentInput == "") {
       setShowSearchResults(false);
+      setShowKeyboard(false);
       setResults([]);
       return;
     }
-    setShowSearchResults(true);
     const searchResults = [];
     for (const place of db) {
       if (place.text.toLocaleLowerCase().includes(currentInput.toLocaleLowerCase())) {
@@ -50,17 +52,42 @@ export default function SearchBar({ setShowSearchResults }) {
         <input
           placeholder="Search..."
           value={input}
-          onChange={handleInputChange}
+          onClick={() => {
+            setShowKeyboard(true)
+            setShowSearchResults(true);
+          }}
         />
         <FaSearch id="search-icon" />
       </div>
       <ul class="list-group">
-        {results.slice(0, 5).map(result => {
+        {results.slice(0, 3).map(result => {
           return <li class="list-group-item">
             <Link to={result.href}>{result.text}</Link>
           </li>
         })}
       </ul>
+      {showKeyboard &&
+        <div className="keyboard">
+          <Keyboard
+            layout={
+              {
+                default: [
+                  "q w e r t y u i o p",
+                  "a s d f g h j k l",
+                  "{shift} z x c v b n m {backspace}",
+                  "{space}"
+                ],
+                shift: [
+                  "Q W E R T Y U I O P",
+                  "A S D F G H J K L",
+                  "{shift} Z X C V B N M {backspace}",
+                  "{space}"
+                ]
+              }}
+            onChange={handleInputChange}
+          />
+        </div>
+      }
     </div>
 
   )
