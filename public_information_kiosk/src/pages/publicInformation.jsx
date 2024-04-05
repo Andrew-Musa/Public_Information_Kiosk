@@ -17,15 +17,15 @@ import { Context } from '../context';
 export default function PublicInformation() {
     const imageDataGroup1 = [
         [
-            { image: Attractions, alt: 'Image 1_1', text: 'Attractions', href: "/outside-navigation" },
+            { image: Attractions, alt: 'Image 1_1', text: 'Attractions', href: "./attraction" },
             { image: Restaurant, alt: 'Image 1_2', text: 'Cuisines', href: "/restaurants-information" },
-            { image: Entertainments, alt: 'Ima', text: 'Cinema', href: "/outside-navigation" },
-            { image: Housing, alt: 'Image 1_4', text: 'Housing', href: "/outside-navigation" }
+            { image: Entertainments, alt: 'Ima', text: 'Cinema', href: "./entertainment" },
+            { image: Housing, alt: 'Image 1_4', text: 'Housing', href: "./housing" }
         ],
         [
-            { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "/outside-navigation" },
-            { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "/outside-navigation" },
-            { image: landmark_logo, alt: 'landmark_logo', text: 'Landmarks', href: "/outside-navigation" },
+            { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "./transportation" },
+            { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "./shopping" },
+            { image: landmark_logo, alt: 'landmark_logo', text: 'Landmarks', href: "./attraction" },
             { image: museum, alt: 'Image 1_4', text: 'Museum', href: "./museum" }
         ]
     ];
