@@ -20,6 +20,7 @@ import AccessInfo3 from './pages/accessInfo3';
 import './App.css';
 import { createContext, useState } from 'react';
 import { Context } from "./context.js";
+import List from './components/list.jsx';
 
 
 const router = createBrowserRouter([
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
   {
     path: "/accessLanding",
     element: <AccessLanding />
+  },
+  {
+    path: "/public-information/:type",
+    element: <List />
   }
 ]);
 

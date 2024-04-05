@@ -34,14 +34,14 @@ export default function OutsideNavigation() {
         setShowPopup2(false);
     };
 
-    const position = {lat: 51.0447, lng: -114.0719};
+    const position = { lat: 51.0447, lng: -114.0719 };
 
     return (
         <div>
             {accessibleMode && <div style={{ height: "100px" }}></div>}
             <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Directions to Destination</h2>
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
-                <Link to="/restaurants" className="backButton" style={{textDecoration: 'none'}}>{'< Back'}</Link>
+                <Link to="/public-information" className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
             {showPopup && (
@@ -51,7 +51,7 @@ export default function OutsideNavigation() {
                         {showPopupText && <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup}>X</button>}
                         <p style={{ marginTop: '15px' }}>{!showPopupText ? "Are you sure you want to call a volunteer to your kiosk?" : "A white-hat volunteer is on their way to assist you. The volunteer will be there in approximately 2 minutes."}</p>
                         <div className='d-flex justify-content-center'>
-                            {!showPopupText && <button className='backButton' style={{marginRight: 5}} onClick={handleClosePopup}>No, Don't</button>}
+                            {!showPopupText && <button className='backButton' style={{ marginRight: 5 }} onClick={handleClosePopup}>No, Don't</button>}
                             {!showPopupText && <button className='backButton' onClick={handleYesCall}>Yes, Call</button>}
                         </div>
                     </div>

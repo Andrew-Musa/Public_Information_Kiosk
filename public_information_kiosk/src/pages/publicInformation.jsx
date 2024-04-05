@@ -26,7 +26,7 @@ export default function PublicInformation() {
             { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "/outside-navigation" },
             { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "/outside-navigation" },
             { image: landmark_logo, alt: 'landmark_logo', text: 'Landmarks', href: "/outside-navigation" },
-            { image: museum, alt: 'Image 1_4', text: 'Museum', href: "/outside-navigation" }
+            { image: museum, alt: 'Image 1_4', text: 'Museum', href: "./museum" }
         ]
     ];
 
@@ -67,7 +67,7 @@ export default function PublicInformation() {
                         {showPopupText && <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup}>X</button>}
                         <p style={{ marginTop: '15px' }}>{!showPopupText ? "Are you sure you want to call a volunteer to your kiosk?" : "A white-hat volunteer is on their way to assist you. The volunteer will be there in approximately 2 minutes."}</p>
                         <div className='d-flex justify-content-center'>
-                            {!showPopupText && <button className='backButton' style={{marginRight: 5}} onClick={handleClosePopup}>No, Don't</button>}
+                            {!showPopupText && <button className='backButton' style={{ marginRight: 5 }} onClick={handleClosePopup}>No, Don't</button>}
                             {!showPopupText && <button className='backButton' onClick={handleYesCall}>Yes, Call</button>}
                         </div>
                     </div>
