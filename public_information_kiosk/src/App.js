@@ -28,19 +28,19 @@ const router = createBrowserRouter([
     element: <Landing />
   },
   {
-    path: "/accessInfoLanding",
+    path: "/accessInfoLanding", // could delete
     element: <AccessInfoLanding />
   },
   {
-    path: "/accessInfo1",
+    path: "/accessInfo1", // could delete
     element: <AccessInfo1 />
   },
   {
-    path: "/accessInfo2",
+    path: "/accessInfo2", // could delete
     element: <AccessInfo2 />
   },
   {
-    path: "/accessInfo3",
+    path: "/accessInfo3", // could delete
     element: <AccessInfo3 />
   },
   {
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
     element: <AccessibilityInformation />
   },
   {
-    path: "/accessLanding",
+    path: "/accessLanding", // could delete
     element: <AccessLanding />
   }
 ]);
