@@ -59,9 +59,9 @@ export default function SearchBar({ setShowSearchResults }) {
         />
         <FaSearch id="search-icon" />
       </div>
-      <ul class="list-group">
+      <ul className="list-group">
         {results.slice(0, 3).map(result => {
-          return <li class="list-group-item">
+          return <li className="list-group-item">
             <Link to={result.href}>{result.text}</Link>
           </li>
         })}

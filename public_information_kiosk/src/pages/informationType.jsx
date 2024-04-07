@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Context } from '../context';
 import './styles.css';
 import SearchBar from '../components/searchBar';
 import { Link } from 'react-router-dom';
+import { useIdleTimer } from 'react-idle-timer/legacy'
+
 
 export default function InformationType() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -29,6 +31,16 @@ export default function InformationType() {
         setShowPopupText(false);
     };
 
+    const onIdle = () => {
+        window.location.href = "/";
+    }
+
+    useIdleTimer({
+        onIdle,
+        timeout: 20_000,
+        throttle: 500
+    })
+
     return (
         <div>
             {accessibleMode && <div style={{ height: "102px" }}></div>}
@@ -45,7 +57,7 @@ export default function InformationType() {
                         {showPopupText && <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup}>X</button>}
                         <p style={{ marginTop: '15px' }}>{!showPopupText ? "Are you sure you want to call a volunteer to your kiosk?" : "A white-hat volunteer is on their way to assist you. The volunteer will be there in approximately 2 minutes."}</p>
                         <div className='d-flex justify-content-center'>
-                            {!showPopupText && <button className='backButton' style={{marginRight: 5}} onClick={handleClosePopup}>No, Don't</button>}
+                            {!showPopupText && <button className='backButton' style={{ marginRight: 5 }} onClick={handleClosePopup}>No, Don't</button>}
                             {!showPopupText && <button className='backButton' onClick={handleYesCall}>Yes, Call</button>}
                         </div>
                     </div>
