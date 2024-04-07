@@ -17,16 +17,16 @@ import { Context } from '../context';
 export default function PublicInformation() {
     const imageDataGroup1 = [
         [
-            { image: Attractions, alt: 'Image 1_1', text: 'Attractions', href: "./attraction" },
+            { image: Attractions, alt: 'Image 1_1', text: 'Attractions', href: "./Attractions" },
             { image: Restaurant, alt: 'Image 1_2', text: 'Cuisines', href: "/restaurants-information" },
-            { image: Entertainments, alt: 'Ima', text: 'Cinema', href: "./entertainment" },
-            { image: Housing, alt: 'Image 1_4', text: 'Housing', href: "./housing" }
+            { image: Entertainments, alt: 'Ima', text: 'Cinema', href: "./Enterntainment" },
+            { image: Housing, alt: 'Image 1_4', text: 'Housing', href: "./Housing" }
         ],
         [
-            { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "./transportation" },
-            { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "./shopping" },
-            { image: landmark_logo, alt: 'landmark_logo', text: 'Landmarks', href: "./attraction" },
-            { image: museum, alt: 'Image 1_4', text: 'Museum', href: "./museum" }
+            { image: Transportations, alt: 'Image 1_5', text: 'Transit', href: "./Transportation" },
+            { image: shopping, alt: 'Image 1_6', text: 'Shopping', href: "./Shopping" },
+            { image: landmark_logo, alt: 'landmark_logo', text: 'Landmarks', href: "./Landmarks" },
+            { image: museum, alt: 'Image 1_4', text: 'Museum', href: "./Museums" }
         ]
     ];
 
