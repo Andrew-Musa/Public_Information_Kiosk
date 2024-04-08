@@ -37,6 +37,10 @@ export default function AccessibilityInformation() {
         throttle: 500
     })
 
+    const [showFirstParagraph, setShowFirstParagraph] = useState(false);
+    const [showSecondParagraph, setShowSecondParagraph] = useState(false);
+
+
     return (
 
         <div>
@@ -64,9 +68,18 @@ export default function AccessibilityInformation() {
                 </>
             )}
 
-            <p style={{ marginTop: '40px', marginLeft: '50px' }}>Information Informaiton Information Information Informaiton Information Information Informaiton Information Information Informaiton Information.</p>
-            <p style={{ marginLeft: '50px' }}>Information Informaiton Information Information Informaiton Information Information Informaiton Information Information Informaiton Information.</p>
-            <p style={{ marginLeft: '50px' }}>(888) 888-8888</p>
+            <button onClick={() => setShowFirstParagraph(!showFirstParagraph)} className='backButton' style={{ marginLeft: '50px', width: '77%', marginTop: '50px'}}>Accessible Transportation &#9660;</button>
+            {showFirstParagraph && (
+                <p style={{ marginLeft: '50px', marginTop: '20px' }}>
+                Information Informaiton Information Information Informaiton Information Information Informaiton Information, For more information press <Link to='/accessInfo1'>here</Link>.
+                </p>
+            )}
+            <button onClick={() => setShowSecondParagraph(!showSecondParagraph)} className='backButton' style={{ marginLeft: '50px', width: '77%', marginTop: '20px'}}>Airport Accessiblity Services &#9660;</button>
+            {showSecondParagraph && (
+                <p style={{ marginLeft: '50px', marginTop: '20px' }}>
+                Information Informaiton Information Information Informaiton Information Information Informaiton Information, For more information press <Link to='/accessInfo2'>here</Link>.
+                </p>
+            )}
         </div>
     );
 }

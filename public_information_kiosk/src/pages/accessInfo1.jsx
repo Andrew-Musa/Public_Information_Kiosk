@@ -1,38 +1,76 @@
-import React from 'react';
+import React, { useContext, useState, showPopup } from 'react';
+import { Context } from '../context';
+import './styles.css';
 import { Link } from 'react-router-dom';
+import { useIdleTimer } from 'react-idle-timer';
+import TimeoutPop from '../components/timeoutPop';
+
+export default function AccessibilityInformation() {
+
+    const [accessibleMode, _] = useContext(Context);
+
+    const [showPopup, setShowPopup] = useState(false);
+    const [showPopupText, setShowPopupText] = useState(false);
+
+    const handleYesCall = () => {
+        setShowPopupText(true);
+    };
+
+    const handleClickVolunteer = () => {
+        setShowPopup(true);
+    };
+
+    const handleClosePopup = () => {
+        setShowPopup(false);
+        setShowPopupText(false);
+    };
+
+    const [showIdlePopup, setShowIdlePopup] = useState(false);
+
+    const onIdle = () => {
+        setShowIdlePopup(true);
+    }
+
+    useIdleTimer({
+        onIdle,
+        timeout: 10_000,
+        throttle: 500
+    })
+
+    const [showFirstParagraph, setShowFirstParagraph] = useState(false);
+    const [showSecondParagraph, setShowSecondParagraph] = useState(false);
 
 
-export default function AccessInfo1() {
     return (
-        <div style={{ position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
-            <div style={{ position: 'absolute', top: '50px', left: '10px' }}>
-                <Link to="/accessInfoLanding">
-                    <button style={{ border: 'none', background: 'none', fontSize: '20px', padding: '5px 10px', display: 'flex', alignItems: 'center' }}>
-                        <span>{'<'}</span>
-                        <span style={{ marginLeft: '5px' }}>Back</span>
-                    </button>
-                </Link>
+
+        <div>
+            {accessibleMode && <div style={{ height: "100px" }}></div>}
+            <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Accessibility Information</h2>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', margin: '50px 50px 0' }}>
+                <Link to="/accessibility-information" className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
+                <button className="volunteerButton" onClick={handleClickVolunteer}>Call a Volunteer</button>
             </div>
-            <div style={{ marginTop: '0px', marginLeft: '50px', textAlign: 'center' }}>
-                <h1>Accessible Transportation</h1>
-                <p>
-                    Many of the taxi operators at Calgary International Airport offer accessible vehicles and accept the Access Calgary Extra Card. Please contact one of the taxi companies operating from YYC for more information.
-                </p>
-                <h2>Calgary Transit Access</h2>
-                <p>
-                    Non-folding / non-collapsible mobility aids can be accommodated by Care Calgary, Southland, and Calgary Access Buses.
-                    Please visit Calgary Transit’s Accessibility page for more information on planning ahead, and riding the bus or CTrain.
-                    <a href="https://www.yyc.com/en-us/travellerinfo/transportation/transit/Pages/default.aspx">Click here</a> for general transit info at YYC.
-                </p>
-                <h2>Wheelchair Accessible Vehicle (WAV) Calgary</h2>
-                <p>
-                    Non-folding / non-collapsible mobility aids can be accommodated by all WAV vehicles. They can also accommodate scooters.
-                </p>
-                <h2>Rental Cars and Hotel Shuttles</h2>
-                <p>
-                    Rental car companies and hotel shuttles provide their own means of accessibility. To ensure availability of accessible modes of transportation, contact your ground transportation provider directly for more information.
-                </p>
-            </div>
+
+            {showIdlePopup && <TimeoutPop setShowIdlePopup={setShowIdlePopup} />}
+
+            {showPopup && (
+                <>
+                    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>
+                    <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '20px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', zIndex: '9999' }}>
+                        {showPopupText && <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup}>X</button>}
+                        <p style={{ marginTop: '15px' }}>{!showPopupText ? "Are you sure you want to call a volunteer to your kiosk?" : "A white-hat volunteer is on their way to assist you. The volunteer will be there in approximately 2 minutes."}</p>
+                        <div className='d-flex justify-content-center'>
+                            {!showPopupText && <button className='backButton' style={{ marginRight: 5 }} onClick={handleClosePopup}>No, Don't</button>}
+                            {!showPopupText && <button className='backButton' onClick={handleYesCall}>Yes, Call</button>}
+                        </div>
+                    </div>
+                </>
+            )}
+
+            <p style={{ marginLeft: '50px', marginTop: '20px' }}>Information Informaiton Information Information Informaiton Information Information Informaiton Information.</p>
+            <p style={{ marginLeft: '50px', marginTop: '20px' }}>Information Informaiton Information Information Informaiton Information Information Informaiton Information.</p>
+            <p style={{ marginLeft: '50px', marginTop: '20px' }}>Information Informaiton Information Information Informaiton Information Information Informaiton Information.</p>
         </div>
     );
 }
