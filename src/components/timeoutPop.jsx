@@ -4,7 +4,7 @@ import { useIdleTimer } from 'react-idle-timer/legacy';
 
 export default function TimeoutPop({ setShowIdlePopup }) {
     const onIdle = () => {
-        window.location.href = "/";
+        window.location.href = "/Public_Information_Kiosk";
     }
 
     useIdleTimer({
