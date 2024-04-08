@@ -12,6 +12,8 @@ import parking from '../img/Parking.jpeg';
 import lounges from '../img/Lounges.png';
 import { Context } from '../context';
 import { Link } from 'react-router-dom';
+import { useIdleTimer } from 'react-idle-timer';
+import TimeoutPop from '../components/timeoutPop';
 
 export default function AirportInformation() {
     const [accessibleMode, _] = useContext(Context)
@@ -49,6 +51,18 @@ export default function AirportInformation() {
         setShowPopupText(false);
     };
 
+    const [showIdlePopup, setShowIdlePopup] = useState(false);
+
+    const onIdle = () => {
+        setShowIdlePopup(true);
+    }
+
+    useIdleTimer({
+        onIdle,
+        timeout: 10_000,
+        throttle: 500
+    })
+
     return (
         <div>
             {accessibleMode && <div style={{ height: "100px" }}></div>}
@@ -58,6 +72,9 @@ export default function AirportInformation() {
                 <Link to={"/information-type"} className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
+
+            {showIdlePopup && <TimeoutPop setShowIdlePopup={setShowIdlePopup} />}
+
             {showPopup && (
                 <>
                     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>

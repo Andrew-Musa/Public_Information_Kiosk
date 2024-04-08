@@ -3,7 +3,8 @@ import { Context } from '../context';
 import './styles.css';
 import SearchBar from '../components/searchBar';
 import { Link } from 'react-router-dom';
-import { useIdleTimer } from 'react-idle-timer/legacy'
+import { useIdleTimer } from 'react-idle-timer'
+import TimeoutPop from '../components/timeoutPop';
 
 
 export default function InformationType() {
@@ -31,13 +32,15 @@ export default function InformationType() {
         setShowPopupText(false);
     };
 
+    const [showIdlePopup, setShowIdlePopup] = useState(false);
+
     const onIdle = () => {
-        window.location.href = "/";
+        setShowIdlePopup(true);
     }
 
     useIdleTimer({
         onIdle,
-        timeout: 20_000,
+        timeout: 10_000,
         throttle: 500
     })
 
@@ -50,6 +53,9 @@ export default function InformationType() {
                 <Link to="/" className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
+
+            {showIdlePopup && <TimeoutPop setShowIdlePopup={setShowIdlePopup} />}
+
             {showPopup && (
                 <>
                     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>
@@ -99,7 +105,6 @@ export default function InformationType() {
                 }
             </div>
             }
-
         </div>
     );
 }

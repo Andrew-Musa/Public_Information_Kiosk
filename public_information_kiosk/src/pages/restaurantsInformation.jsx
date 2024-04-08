@@ -12,6 +12,8 @@ import French from '../img/French.png';
 import Greek from '../img/Greek.png';
 import { Context } from '../context';
 import { Link } from 'react-router-dom';
+import TimeoutPop from '../components/timeoutPop';
+import { useIdleTimer } from 'react-idle-timer';
 
 
 export default function RestaurantsInformation() {
@@ -40,6 +42,18 @@ export default function RestaurantsInformation() {
         setShowPopupText(false);
     };
 
+    const [showIdlePopup, setShowIdlePopup] = useState(false);
+
+    const onIdle = () => {
+        setShowIdlePopup(true);
+    }
+
+    useIdleTimer({
+        onIdle,
+        timeout: 10_000,
+        throttle: 500
+    })
+
     const imageDataGroup2 = []
     return (
         <div>
@@ -50,6 +64,9 @@ export default function RestaurantsInformation() {
                 <Link to="/public-information" className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
+
+            {showIdlePopup && <TimeoutPop setShowIdlePopup={setShowIdlePopup} />}
+
             {showPopup && (
                 <>
                     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>
@@ -57,7 +74,7 @@ export default function RestaurantsInformation() {
                         {showPopupText && <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer', color: '#B82B35' }} onClick={handleClosePopup}>X</button>}
                         <p style={{ marginTop: '15px' }}>{!showPopupText ? "Are you sure you want to call a volunteer to your kiosk?" : "A white-hat volunteer is on their way to assist you. The volunteer will be there in approximately 2 minutes."}</p>
                         <div className='d-flex justify-content-center'>
-                            {!showPopupText && <button className='backButton' style={{marginRight: 5}} onClick={handleClosePopup}>No, Don't</button>}
+                            {!showPopupText && <button className='backButton' style={{ marginRight: 5 }} onClick={handleClosePopup}>No, Don't</button>}
                             {!showPopupText && <button className='backButton' onClick={handleYesCall}>Yes, Call</button>}
                         </div>
                     </div>

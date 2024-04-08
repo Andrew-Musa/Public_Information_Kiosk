@@ -13,6 +13,8 @@ import landmark_logo from '../img/landmark_logo.png';
 import Housing from '../img/housing_final.png';
 import { Link } from 'react-router-dom';
 import { Context } from '../context';
+import { useIdleTimer } from 'react-idle-timer';
+import TimeoutPop from '../components/timeoutPop';
 
 export default function PublicInformation() {
     const imageDataGroup1 = [
@@ -51,6 +53,18 @@ export default function PublicInformation() {
         setShowPopupText(false);
     };
 
+    const [showIdlePopup, setShowIdlePopup] = useState(false);
+
+    const onIdle = () => {
+        setShowIdlePopup(true);
+    }
+
+    useIdleTimer({
+        onIdle,
+        timeout: 10_000,
+        throttle: 500
+    })
+
     return (
         <div>
             {accessibleMode && <div style={{ height: "100px" }}></div>}
@@ -60,6 +74,9 @@ export default function PublicInformation() {
                 <Link to="/information-type" className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
+
+            {showIdlePopup && <TimeoutPop setShowIdlePopup={setShowIdlePopup} />}
+
             {showPopup && (
                 <>
                     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>

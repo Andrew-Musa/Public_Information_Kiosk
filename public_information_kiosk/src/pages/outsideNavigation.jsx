@@ -4,6 +4,8 @@ import { ZoomIn, ZoomOut, RotateLeft, Explore, SupportAgent, ArrowBack, Star, St
 import './styles.css';
 import { Context } from '../context';
 import { Link } from 'react-router-dom';
+import { useIdleTimer } from 'react-idle-timer';
+import TimeoutPop from '../components/timeoutPop';
 
 export default function OutsideNavigation() {
     const [showPopup, setShowPopup] = useState(false);
@@ -36,6 +38,18 @@ export default function OutsideNavigation() {
 
     const position = { lat: 51.0447, lng: -114.0719 };
 
+    const [showIdlePopup, setShowIdlePopup] = useState(false);
+
+    const onIdle = () => {
+        setShowIdlePopup(true);
+    }
+
+    useIdleTimer({
+        onIdle,
+        timeout: 10_000,
+        throttle: 500
+    })
+
     return (
         <div>
             {accessibleMode && <div style={{ height: "100px" }}></div>}
@@ -44,6 +58,7 @@ export default function OutsideNavigation() {
                 <Link to="/public-information" className="backButton" style={{ textDecoration: 'none' }}>{'< Back'}</Link>
                 <button onClick={handleClickVolunteer} className="volunteerButton">Call a Volunteer</button>
             </div>
+            {showIdlePopup && <TimeoutPop setShowIdlePopup={setShowIdlePopup} />}
             {showPopup && (
                 <>
                     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '9998' }} onClick={handleClosePopup}></div>
