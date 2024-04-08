@@ -1,6 +1,6 @@
 import Header from './components/header';
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from 'react-router-dom';
 import Landing from './pages/landing';
@@ -23,7 +23,7 @@ import { Context } from "./context.js";
 import List from './components/list.jsx';
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Landing />
