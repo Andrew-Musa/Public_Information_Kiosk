@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Public_Information_Kiosk/static/css/main.892554e5.css",
-    "main.js": "/Public_Information_Kiosk/static/js/main.f5fe7f1c.js",
+    "main.js": "/Public_Information_Kiosk/static/js/main.ec216b85.js",
     "static/js/453.0e11526e.chunk.js": "/Public_Information_Kiosk/static/js/453.0e11526e.chunk.js",
     "static/media/indoor_map.png": "/Public_Information_Kiosk/static/media/indoor_map.b69da7ddc2d94cc91517.png",
     "static/media/access_logo.png": "/Public_Information_Kiosk/static/media/access_logo.b0dc1d749d8993f8381e.png",
@@ -26,11 +26,11 @@
     "static/media/Transportation.jpeg": "/Public_Information_Kiosk/static/media/Transportation.e67a8d536950d0a6cac8.jpeg",
     "index.html": "/Public_Information_Kiosk/index.html",
     "main.892554e5.css.map": "/Public_Information_Kiosk/static/css/main.892554e5.css.map",
-    "main.f5fe7f1c.js.map": "/Public_Information_Kiosk/static/js/main.f5fe7f1c.js.map",
+    "main.ec216b85.js.map": "/Public_Information_Kiosk/static/js/main.ec216b85.js.map",
     "453.0e11526e.chunk.js.map": "/Public_Information_Kiosk/static/js/453.0e11526e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.892554e5.css",
-    "static/js/main.f5fe7f1c.js"
+    "static/js/main.ec216b85.js"
   ]
 }
