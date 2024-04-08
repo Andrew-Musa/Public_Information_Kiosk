@@ -2,6 +2,7 @@
   "name": "public_information_kiosk",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://andrew-musa.github.io/Public_Information_Kiosk/",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
@@ -27,7 +28,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "homepage": "https://andrew-musa.github.io/Public_Information_Kiosk/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
