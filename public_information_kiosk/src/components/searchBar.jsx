@@ -24,7 +24,7 @@ const db = [
   { text: "Museum", href: "/outside-navigation" },
 ]
 
-export default function SearchBar({ setShowSearchResults }) {
+export default function SearchBar({ setShowSearchResults, accessibleMode }) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [showKeyboard, setShowKeyboard] = useState(false);
@@ -67,7 +67,7 @@ export default function SearchBar({ setShowSearchResults }) {
         })}
       </ul>
       {showKeyboard &&
-        <div className="keyboard">
+        <div className={accessibleMode ? "keyboard-accessible" : "keyboard"}>
           <Keyboard
             layout={
               {

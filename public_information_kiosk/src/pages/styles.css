@@ -339,6 +339,18 @@ body {
     padding: 20px;
 }
 
+.keyboard-accessible {
+    width: 100vw;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
 .mappedin-map-inpage {
     max-width: 200px;
 }

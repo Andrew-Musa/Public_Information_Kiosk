@@ -71,7 +71,7 @@ export default function InformationType() {
             )}
 
             <div className="search-bar-container">
-                <SearchBar setShowSearchResults={setShowSearchResults} />
+                <SearchBar setShowSearchResults={setShowSearchResults} accessibleMode={accessibleMode} />
             </div>
 
             {!showSearchResults && <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>

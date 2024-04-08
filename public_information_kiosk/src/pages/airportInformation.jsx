@@ -90,7 +90,7 @@ export default function AirportInformation() {
             )}
 
             <div className="search-bar-container">
-                <SearchBar setShowSearchResults={setShowSearchResults} />
+                <SearchBar setShowSearchResults={setShowSearchResults} accessibleMode={accessibleMode} />
             </div>
 
 
