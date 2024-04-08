@@ -26,7 +26,7 @@ const db = [
 
 export default function SearchBar({ setShowSearchResults, accessibleMode }) {
   const [input, setInput] = useState("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(db);
   const [showKeyboard, setShowKeyboard] = useState(false);
 
   const handleInputChange = (currentInput) => {
@@ -59,13 +59,13 @@ export default function SearchBar({ setShowSearchResults, accessibleMode }) {
         />
         <FaSearch id="search-icon" />
       </div>
-      <ul className="list-group">
-        {results.slice(0, 3).map(result => {
+      {showKeyboard && <ul className="list-group">
+        {results.length == 0 ? <li className="list-group-item">No result</li> : results.slice(0, 3).map(result => {
           return <li className="list-group-item">
             <Link to={result.href}>{result.text}</Link>
           </li>
         })}
-      </ul>
+      </ul>}
       {showKeyboard &&
         <div className={accessibleMode ? "keyboard-accessible" : "keyboard"}>
           <Keyboard
